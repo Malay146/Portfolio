@@ -1,15 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Pixelify_Sans, Roboto_Mono, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const pixelifySans = Pixelify_Sans({
   subsets: ["latin"],
+  variable: "--font-pixelify",
+  weight: ["400", "500", "600", "700"],
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-roboto-mono",
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  variable: "--font-roboto-condensed",
+  weight: ["100", "300", "400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${pixelifySans.variable} ${robotoMono.variable} ${robotoCondensed.variable} antialiased selection:bg-violet-900 selection:text-violet-500 bg-black`}
       >
         {children}
       </body>
