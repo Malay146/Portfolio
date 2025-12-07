@@ -1,8 +1,11 @@
 import AboutMe from "@/components/AboutMe";
+import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 import Hero1 from "@/components/Hero1";
 import Hero2 from "@/components/Hero2";
 import Navbar from "@/components/Navbar";
+import Projects from "@/components/Projects";
 import StripGridHorizontal from "@/components/StripGridHorizontal";
 import StripGridVertical from "@/components/StripGridVertical";
 import TechnologyStack from "@/components/TechnologyStack";
@@ -23,6 +26,11 @@ export default function Home() {
           <StripGridHorizontal className="h-8" />
           <TechnologyStack />
           <StripGridHorizontal className="h-8" />
+          <Projects />
+          <StripGridHorizontal className="h-8" />
+          <Education />
+          <StripGridHorizontal className="h-12" />
+          <Footer />
         </div>
         <StripGridVertical />
       </div>

@@ -38,14 +38,14 @@ const TechnologyStack = () => {
 
   return (
     <div className="py-6 flex flex-col gap-4">
-      <div className="text-white flex justify-between items-center px-16 border-y border-dashed border-white/40">
-        <h2 className="font-roboto-mono font-bold tracking-tighter text-[24px] px-2 border-x border-dashed border-white/40 relative">
+      <div className="text-white flex justify-between items-center px-16 border-y border-dashed border-white/30">
+        <h2 className="font-roboto-mono font-bold tracking-tighter text-[24px] px-2 border-x border-dashed border-white/30 relative">
           Technology Stack
           <TopLeft />
           <BottomRight />
         </h2>
       </div>
-      <div className="text-white flex items-center justify-between p-3 border-y border-dashed border-white/40">
+      <div className="text-white flex items-center justify-between p-3 border-y border-dashed border-white/30">
         {stacks.map((stack) => (
           <ToolTip key={stack.name} infoText={stack.name}>
             <div className="size-10 flex justify-center items-center hover:scale-105 transition-transform">
