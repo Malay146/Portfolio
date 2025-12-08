@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Pixelify_Sans, Roboto_Mono, Roboto_Condensed} from "next/font/google";
 import doto from "next/font/local";
+import { Analytics } from "@vercel/analytics/next"
 
 import "./globals.css";
 
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${pixelifySans.variable} ${robotoMono.variable} ${robotoCondensed.variable} ${dotoFont.variable}  antialiased selection:bg-violet-900 selection:text-violet-500 bg-black`}
       >
+        <Analytics />
         {children}
       </body>
     </html>
