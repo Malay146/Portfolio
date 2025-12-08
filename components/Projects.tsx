@@ -55,7 +55,7 @@ const Projects = () => {
           className="border-y border-dashed border-white/30 flex"
         >
       
-          <div className="w-[520px] h-[220px] relative overflow-hidden cursor-pointer">
+          <div className="w-[530px] h-[200px] relative overflow-hidden cursor-pointer">
             <Link href={project.imageLink} target="_blank">
               <Image src={project.imageSrc} alt={project.title} fill />
                <div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-full h-full bg-black/50 flex justify-center items-center gap-2 opacity-0 hover:opacity-100 hover:backdrop-blur-sm transition-all duration-300 ease-in-out">

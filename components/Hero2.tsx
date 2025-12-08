@@ -48,8 +48,8 @@ const Hero2 = () => {
         </div>
       </div>
 
-      <div className="w-1/3 h-full relative">
-        <Image src="/pic.png" alt="Description" fill className="object-cover" />
+      <div className="w-1/3 h-full relative border-x border-dashed border-white/50">
+        <Image src="/pic3.png" alt="Description" fill className="object-cover saturate-0 hover:saturate-150 transition-all duration-500" />
       </div>
 
       <div className="w-1/3 h-full flex flex-col justify-around text-sm font-roboto-mono font-bold text-white/50 text-[18px] tracking-tight">
