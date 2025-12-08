@@ -26,7 +26,7 @@ const Hero2 = () => {
       <div className="w-1/3 h-full font-roboto-mono tracking-tight flex flex-col justify-center gap-8">
         <div className="w-full border-y border-dashed border-white/50 flex">
           <div className="flex-1"></div>
-          <div className="text-sm border-l border-dashed border-white/50 flex flex-col p-2 justify-center leading-none gap-1 relative">
+          <div className="text-sm border-l border-dashed border-white/50 flex flex-col p-2 justify-center leading-none gap-1 relative hover:bg-white/20  transition-all duration-100 cursor-default">
             <span className="inline-block text-[24px] font-thin">Myself,</span>
             <h1 className="whitespace-nowrap text-[30px] font-bold">
               Malay Patel
@@ -36,7 +36,7 @@ const Hero2 = () => {
           </div>
         </div>
         <div className="w-full border-y border-dashed border-white/50 flex">
-          <div className="text-sm flex flex-col justify-center p-2 leading-none gap-1 relative">
+          <div className="text-sm flex flex-col justify-center p-2 leading-none gap-1 relative hover:bg-white/20 transition-all duration-100 cursor-default">
             <span className="inline-block text-[24px] font-thin">
               Fullstack
             </span>
@@ -56,9 +56,9 @@ const Hero2 = () => {
         {info.map((item, index) => (
           <div
             key={index}
-            className="flex items-center border-y border-dashed border-white/50"
+            className="flex items-center border-y border-dashed border-white/50 "
           >
-            <div className="border-r border-dashed border-white/50 size-14 p-4 flex items-center justify-center relative">
+            <div className="border-r border-dashed border-white/50 size-14 p-4 flex items-center justify-center relative hover:bg-white/20 transition-all duration-100 cursor-default">
               {item.icon}
               <TopRight />
               <BottomRight />

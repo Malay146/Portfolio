@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="text-white flex flex-col items-center p-8">
-      <h1 className="font-doto text-[275px] tracking-tighter leading-none bg-linear-to-b from-black to-white bg-clip-text text-transparent">
+      <h1 className="font-doto text-[275px] tracking-tighter leading-none bg-linear-to-b from-black to-white bg-clip-text text-transparent pointer-events-none select-none">
         MALAY
       </h1>
       {/* <FooterTitle /> */}

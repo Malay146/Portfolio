@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Pixelify_Sans, Roboto_Mono, Roboto_Condensed} from "next/font/google";
+import {
+  Inter,
+  Pixelify_Sans,
+  Roboto_Mono,
+  Roboto_Condensed,
+} from "next/font/google";
 import doto from "next/font/local";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
@@ -10,7 +15,6 @@ const dotoFont = doto({
   variable: "--font-doto",
   weight: "400",
 });
-
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,7 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${pixelifySans.variable} ${robotoMono.variable} ${robotoCondensed.variable} ${dotoFont.variable}  antialiased selection:bg-violet-900 selection:text-violet-500 bg-black`}
+        className={`${inter.variable} ${pixelifySans.variable} ${robotoMono.variable} ${robotoCondensed.variable} ${dotoFont.variable} 
+           antialiased selection:bg-purple-700 selection:text-purple-100 bg-black selection:font-pixelify`}
       >
         <Analytics />
         {children}

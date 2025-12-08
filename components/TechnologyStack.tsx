@@ -39,7 +39,7 @@ const TechnologyStack = () => {
   return (
     <div className="py-6 flex flex-col gap-4">
       <div className="text-white flex justify-between items-center px-16 border-y border-dashed border-white/30">
-        <h2 className="font-roboto-mono font-bold tracking-tighter text-[24px] px-2 border-x border-dashed border-white/30 relative">
+        <h2 className="font-roboto-mono font-bold tracking-tighter text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
           Technology Stack
           <TopLeft />
           <BottomRight />

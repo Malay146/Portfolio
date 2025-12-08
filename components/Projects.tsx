@@ -42,7 +42,7 @@ const Projects = () => {
   return (
     <div className="py-6 flex flex-col gap-4">
       <div className="text-white flex justify-between items-center px-16 border-y border-dashed border-white/30">
-        <h2 className="font-roboto-mono font-bold tracking-tighter text-[24px] px-2 border-x border-dashed border-white/30 relative">
+        <h2 className="font-roboto-mono font-bold tracking-tighter text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
           Projects
           <TopLeft />
           <BottomRight />
@@ -70,14 +70,14 @@ const Projects = () => {
        
           <div className="flex flex-col gap-2 px-8 py-2 text-white w-full border-l border-dashed border-white/30">
             <div>
-              <button className="font-inter text-xs border border-zinc-400 bg-[#212121] rounded-md px-1 py-0.5 shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.25),inset_1px_1px_2px_rgba(255,255,255,0.25)] flex items-center gap-1">
+              <button className="font-inter text-white/70 text-xs border border-zinc-400 bg-[#212121] rounded-md px-1 py-0.5 shadow-[inset_-1px_-1px_2px_rgba(255,255,255,0.25),inset_1px_1px_2px_rgba(255,255,255,0.25)] flex items-center gap-1">
                 {getStatusCircle(project.status)} {project.status}
 
               </button>
             </div>
 
             <div className="flex justify-between items-center">
-              <h3 className="font-roboto-mono text-[24px] font-bold tracking-tight">
+              <h3 className="font-roboto-mono text-[24px] font-bold tracking-tight hover:bg-white/10 transition-all duration-100 cursor-default">
                 {project.title}
               </h3>
 
@@ -91,7 +91,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <p className="text-xs font-light font-roboto-mono text-justify tracking-tighter text-white/50">{project.description}</p>
+            <p className="text-xs font-light font-roboto-mono text-justify tracking-tighter text-white/50 hover:bg-white/10 transition-all duration-100">{project.description}</p>
 
        
             <div className="flex items-center">
