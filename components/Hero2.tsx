@@ -7,6 +7,7 @@ import TopLeft from "./Lcorner/TopLeft";
 import BottomLeft from "./Lcorner/BottomLeft";
 import BottomRight from "./Lcorner/BottomRight";
 import TopRight from "./Lcorner/TopRight";
+import Link from "next/link";
 
 const Hero2 = () => {
   const info = [
@@ -27,7 +28,9 @@ const Hero2 = () => {
         <div className="w-full border-y border-dashed border-white/50 flex">
           <div className="md:flex-1"></div>
           <div className="text-sm border-l border-dashed border-white/50 flex flex-col p-2 justify-center leading-none gap-1 relative hover:bg-white/20  transition-all duration-100 cursor-default">
-            <span className="inline-block text-[16px] md:text-[24px] font-thin">Myself,</span>
+            <span className="inline-block text-[16px] md:text-[24px] font-thin">
+              Myself,
+            </span>
             <h1 className="whitespace-nowrap text-[21px] md:text-[30px] font-bold">
               Malay Patel
             </h1>
@@ -51,7 +54,12 @@ const Hero2 = () => {
       </div>
 
       <div className="w-1/3 h-full relative border-x border-dashed border-white/50">
-        <Image src="/pic2.png" alt="Description" fill className="object-cover filter saturate-0 hover:saturate-150 transition-all duration-500" />
+        <Image
+          src="/pic2.png"
+          alt="Description"
+          fill
+          className="object-cover filter saturate-0 hover:saturate-150 transition-all duration-500"
+        />
       </div>
 
       <div className="w-1/3 h-full flex flex-col justify-around text-sm font-roboto-mono font-bold text-white/50 text-[18px] tracking-tight">
@@ -61,11 +69,39 @@ const Hero2 = () => {
             className="flex items-center border-y border-dashed border-white/50 "
           >
             <div className="border-r border-dashed border-white/50 size-8 md:size-14 p-2 md:p-4 flex items-center justify-center relative hover:bg-white/20 transition-all duration-100 cursor-default">
-              {item.icon}
-              <TopRight className="size-2 md:size-4"/>
+              {item.text === "Get in touch" ? (
+                <>
+                  <Link
+                    href="mailto:pmalay694@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center cursor-pointer"
+                  >
+                    <GetintouchIcon />
+                  </Link>
+                </>
+              ) : (
+                item.icon
+              )}
+              <TopRight className="size-2 md:size-4" />
               <BottomRight className="size-2 md:size-4" />
             </div>
-            <h1 className="p-1 font-normal md:font-bold md:p-3 text-white/80 md:text-white/50 text-[8px] tracking-tighter md:text-[16px] lg:text-[18px] whitespace-nowrap">{item.text}</h1>
+
+            {item.text === "Get in touch" ? (
+              <Link href="mailto:pmalay694@gmail.com" target="_blank" rel="noopener noreferrer">
+                <h1 className="p-1 font-normal md:font-bold md:p-3 text-white/80 md:text-white/50 text-[8px] tracking-tighter md:text-[16px] lg:text-[18px] whitespace-nowrap hover:text-white cursor-pointer">
+                  {item.text}
+                </h1>
+              </Link>
+            ) : (
+              <h1 className="p-1 font-normal md:font-bold md:p-3 text-white/80 md:text-white/50 text-[8px] tracking-tighter md:text-[16px] lg:text-[18px] whitespace-nowrap">
+                {item.text}
+              </h1>
+            )}
+
+            {/* <h1 className="p-1 font-normal md:font-bold md:p-3 text-white/80 md:text-white/50 text-[8px] tracking-tighter md:text-[16px] lg:text-[18px] whitespace-nowrap">
+              {item.text}
+            </h1> */}
           </div>
         ))}
       </div>
