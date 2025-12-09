@@ -13,7 +13,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "uiarchives",
-    imageSrc: "/uiarchives.png",
+    imageSrc: "/uiarchivesnew.png",
     imageLink: "https://uiarchives.com",
     webLink: "https://uiarchives.com",
     githubLink: "https://github.com/Malay146/UIArchives",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
   },
   {
     id: "portfolio",
-    imageSrc: "/portfolio.png",
+    imageSrc: "/portfolionew.png",
     imageLink: "https://portfolio-eta-fawn-ou8buy1iq8.vercel.app/",
     webLink: "https://portfolio-eta-fawn-ou8buy1iq8.vercel.app/",
     githubLink: "https://github.com/Malay146/Portfolio",
