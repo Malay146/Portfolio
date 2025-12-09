@@ -13,7 +13,7 @@ const AboutMe = () => {
           <TopLeft />
           <BottomRight />
         </h2>
-        <Button href="/MALAY_PATEL_RESUME.pdf" className="font-inter text-[12px] md:text-[14px] tracking-tight font-medium flex items-center gap-0.5 hover:bg-white/20 transition-colors">
+        <Button href="/MALAY_PATEL_RESUME.pdf" className="font-inter text-[12px] md:text-[14px] tracking-tight font-medium flex items-center gap-0.5 hover:bg-white/10 transition-colors">
           <FileIcon />
           Resume
         </Button>
