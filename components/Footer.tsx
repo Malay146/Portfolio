@@ -1,22 +1,23 @@
+import { cn } from "@/lib/cn";
 import React from "react";
 
 const Footer = () => {
   return (
-    <div className="text-white flex flex-col items-center p-8">
-      <h1 className="font-doto text-[275px] tracking-tighter leading-none bg-linear-to-b from-black to-white bg-clip-text text-transparent pointer-events-none select-none">
+    <div className="text-white flex flex-col items-center p-6 md:p-8">
+      <h1 className="font-doto text-[130px] md:text-[250px] lg:text-[275px] tracking-tighter leading-none bg-linear-to-b from-black/50 to-white bg-clip-text text-transparent pointer-events-none select-none">
         MALAY
       </h1>
       {/* <FooterTitle /> */}
-      <div className="font-roboto-mono flex flex-col  text-center gap-2 text-sm md:text-base tracking-tight mt-10">
-        <p className="text-white/80 font-light text-[16px]">
+      <div className="font-roboto-mono flex flex-col text-center gap-2 text-sm md:text-base tracking-tight mt-5 md:mt-10">
+        <p className="text-white/80 font-light text-[10px] md:text-[16px]">
           Crafted at 2AM by{" "}
           <span className="inline-block text-white font-bold">MalayPatel</span>
         </p>
-        <p className="text-white/60 text-[14px]">
+        <p className="text-white/60 text-[8px] md:text-[14px]">
           “Powered by creativity, fueled by caffeine and created in dark mode.”
         </p>
-        <p className="text-white/60 text-[14px]">
-          <span className="inline-block text-2xl leading-none">&copy;</span>{" "}
+        <p className="text-white/60 text-[8px] md:text-[14px] flex items-center justify-center gap-1">
+          <CopyrightIcon className="inline-block size-3 md:size-4" />
           2025. All rights reserved.
         </p>
       </div>
@@ -25,6 +26,27 @@ const Footer = () => {
 };
 
 export default Footer;
+
+export const CopyrightIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={cn("icon icon-tabler icons-tabler-outline icon-tabler-copyright", className)}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+      <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173" />
+    </svg>
+  );
+};
 
 export const FooterTitle = () => {
   return (

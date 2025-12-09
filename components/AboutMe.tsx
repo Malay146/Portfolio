@@ -6,20 +6,20 @@ import FileIcon from "./Icons/FileIcon";
 
 const AboutMe = () => {
   return (
-    <div className="py-6 flex flex-col gap-4">
-      <div className="text-white flex justify-between items-center px-16 border-y border-dashed border-white/30 ">
-        <h2 className="font-roboto-mono font-bold tracking-tighter text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+    <div className="py-3 md:py-6 flex flex-col gap-3 md:gap-4">
+      <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30 ">
+        <h2 className="font-roboto-mono font-bold tracking-tighter text-[18px] md:text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
           About Me
           <TopLeft />
           <BottomRight />
         </h2>
-        <Button href="/MALAY_PATEL_RESUME.pdf" className="font-inter text-[14px] tracking-tight font-medium flex items-center gap-0.5 hover:bg-white/20 transition-colors">
+        <Button href="/MALAY_PATEL_RESUME.pdf" className="font-inter text-[12px] md:text-[14px] tracking-tight font-medium flex items-center gap-0.5 hover:bg-white/20 transition-colors">
           <FileIcon />
           Resume
         </Button>
       </div>
-      <div className="text-white flex justify-between items-center px-16 border-y border-dashed border-white/30">
-        <ul className="list-disc text-white/60 text-[16px] font-roboto-mono font-light tracking-tighter leading-5 space-y-3 py-1 ">
+      <div className="text-white flex justify-between items-center px-6 md:px-16 border-y border-dashed border-white/30">
+        <ul className="list-disc text-white/60 text-[10px] md:text-[16px] font-roboto-mono font-light tracking-tighter leading-3 md:leading-5 space-y-3 py-1 ">
           <li className="hover:bg-white/10 transition-all duration-100">
             I’m Malay, a{" "}
             <span className="inline-block font-bold text-white">

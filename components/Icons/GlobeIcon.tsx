@@ -1,6 +1,7 @@
+import { cn } from "@/lib/cn";
 import React from "react";
 
-const GlobeIcon = () => {
+const GlobeIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       width="18"
@@ -8,6 +9,7 @@ const GlobeIcon = () => {
       viewBox="0 0 13 13"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={cn("", className)}
     >
       <g clipPath="url(#clip0_294_643)">
         <path

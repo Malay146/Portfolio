@@ -144,24 +144,24 @@ const Navbar = () => {
       {/* Time and Temp */}
       <div className="flex gap-4">
         <div className="Time flex flex-col">
-          <div className="font-inter font-bold text-[14px]">{dateStr}</div>
-          <div className="font-roboto-condensed font-thin text-[24px] text-white/50 leading-none tracking-tighter">
+          <div className="font-inter font-bold text-[10px] md:text-[14px]">{dateStr}</div>
+          <div className="font-roboto-condensed font-thin text-[20px] md:text-[24px] text-white/50 leading-none tracking-tighter">
             {timeStr}
           </div>
         </div>
-        <div className="Temp flex flex-col">
-          <div className="font-inter font-bold text-[14px] gap-1 flex">
+        <div className="Temp md:flex flex-col md:visible hidden">
+          <div className="font-inter font-bold text-[10px] md:text-[14px] gap-1 flex">
             {icon}
             {temp !== null ? `${temp}°C` : "--"}
           </div>
-          <div className="font-roboto-condensed font-thin text-[24px] text-white/50 leading-none tracking-tighter">
+          <div className="font-roboto-condensed font-thin text-[18px] md:text-[24px] text-white/50 leading-none tracking-tighter">
             {condition}
           </div>
         </div>
       </div>
 
       {/* YT Music */}
-      <div className="h-17 bg-zinc-900 rounded-lg border border-white/30 flex gap-2 p-1.5 shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)]">
+      <div className="h-17 bg-zinc-900 rounded-lg border border-white/30 md:flex gap-2 p-1.5 shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
         <div className="size-14 rounded-sm border border-white/30 relative overflow-hidden my-auto">
           {track.image && (
             <img

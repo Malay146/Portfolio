@@ -19,17 +19,17 @@ export default function Home() {
           <Navbar />
           <Hero1 />
           <Hero2 />
-          <StripGridHorizontal className="h-12" />
+          <StripGridHorizontal className="h-10 md:h-12" />
           <AboutMe />
-          <StripGridHorizontal className="h-8" />
+          <StripGridHorizontal className="h-6 md:h-8" />
           <Experience />
-          <StripGridHorizontal className="h-8" />
+          <StripGridHorizontal className="h-6 md:h-8" />
           <TechnologyStack />
-          <StripGridHorizontal className="h-8" />
+          <StripGridHorizontal className="h-6 md:h-8" />
           <Projects />
-          <StripGridHorizontal className="h-8" />
+          <StripGridHorizontal className="h-6 md:h-8" />
           <Education />
-          <StripGridHorizontal className="h-12" />
+          <StripGridHorizontal className="h-10 md:h-12" />
           <Footer />
         </div>
         <StripGridVertical />

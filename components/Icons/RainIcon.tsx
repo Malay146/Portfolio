@@ -9,7 +9,7 @@ const RainIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_424_14)">
+      <g clipPath="url(#clip0_424_14)">
         <path
           d="M11.3334 9.20801V14.8747"
           stroke="white"
