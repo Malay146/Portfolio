@@ -65,7 +65,7 @@ export const Information = () => {
         >
           <div className="flex justify-between items-center w-full">
             <h2
-              className={`font-roboto-mono text-[12px] md:text-[18px] leading-3 md:leading-normal font-bold tracking-tighter hover:bg-white/10 transition-all duration-100 cursor-default`}
+              className={`font-roboto-mono text-[12px] md:text-[18px] w-75 md:w-full leading-3 md:leading-normal font-bold tracking-tighter hover:bg-white/10 transition-all duration-100 cursor-default`}
             >
               {item.title}
             </h2>
