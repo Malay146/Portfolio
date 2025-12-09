@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://malaypatel.dev/sitemap.xml
+Sitemap: https://malaypatel.com/sitemap.xml
