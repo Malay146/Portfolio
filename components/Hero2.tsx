@@ -77,7 +77,7 @@ const Hero2 = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center cursor-pointer"
                   >
-                    <GetintouchIcon />
+                    <GetintouchIcon className="size-4 md:size-6" />
                   </Link>
                 </>
               ) : (
