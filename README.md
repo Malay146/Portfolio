@@ -45,14 +45,16 @@ Designed with clean UI, smooth user experience, and fast performance in mind.
 
 ## 📁 Folder Structure
 
+```
 project-root/
 │
-├── app/ # Next.js App Router pages
-├── components/ # Reusable UI components
-├── public/ # Static assets (images, icons, fonts)
-├── styles/ # Global or modular styles
+├── app/               # Next.js App Router pages
+├── components/        # Reusable UI components
+├── public/            # Static assets (images, icons, fonts)
+├── styles/            # Global or modular styles
 ├── package.json
 └── README.md
+```
 
 ---
 
