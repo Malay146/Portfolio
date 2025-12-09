@@ -14,8 +14,10 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen bg-black">
       <div className="max-w-5xl min-h-full mx-auto flex">
-        <StripGridVertical />
-        <div className="w-full">
+        <div className="hidden lg:block">
+          <StripGridVertical />
+        </div>
+        <div className="w-full border-x border-white flex flex-col lg:border-x-0">
           <Navbar />
           <Hero1 />
           <Hero2 />
@@ -32,7 +34,9 @@ export default function Home() {
           <StripGridHorizontal className="h-10 md:h-12" />
           <Footer />
         </div>
-        <StripGridVertical />
+        <div className="hidden lg:block">
+          <StripGridVertical />
+        </div>
       </div>
     </div>
   );

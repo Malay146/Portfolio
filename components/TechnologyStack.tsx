@@ -48,7 +48,7 @@ const TechnologyStack = () => {
       <div className="text-white flex items-center justify-between p-1 md:p-3 border-y border-dashed border-white/30">
         {stacks.map((stack) => (
           <ToolTip key={stack.name} infoText={stack.name}>
-            <div className="size-6 md:size-10 flex justify-center items-center hover:scale-105 transition-transform">
+            <div className="size-5 md:size-10 flex justify-center items-center hover:scale-105 transition-transform">
               {React.cloneElement(stack.icon, { className: "size-4 md:size-8" })}
             </div>
           </ToolTip>

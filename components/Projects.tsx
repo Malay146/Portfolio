@@ -54,7 +54,7 @@ const Projects = () => {
           key={project.id}
           className="border-y border-dashed border-white/30 flex"
         >
-          <div className="w-[275px] md:w-[550px] relative overflow-hidden cursor-pointer aspect-[1200/630]">
+          <div className="w-[275px] md:w-[550px] relative overflow-hidden cursor-pointer aspect-1200/630">
             <Link href={project.imageLink} target="_blank">
               <Image
                 src={project.imageSrc}
