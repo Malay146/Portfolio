@@ -45,12 +45,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://malaypatel.com"), // ← Change here if using a different domain
 
   title: {
-    default: "Malay Patel — Frontend Developer & UI Engineer",
+    default: "Malay Patel — Fullstack Developer & UI Engineer, enthusiast about modern web",
     template: "%s | Malay Patel",
   },
 
   description:
-    "Portfolio of Malay Patel, a frontend developer specializing in React, Next.js, Tailwind CSS, animations, and modern UI engineering. Explore projects, experience, and skills.",
+    "Portfolio of Malay Patel, a fullstack developer specializing in React, Next.js, Tailwind CSS, animations, and modern UI engineering. Explore projects, experience, and skills.",
 
   keywords: [
     "Malay Patel",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-image.png", // ← Add this file inside public/
+        url: "https://malaypatel.com/og-image.png", // ← Add this file inside public/
         width: 1200,
         height: 630,
         alt: "Malay Patel Portfolio Hero Image",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     title: "Malay Patel — Frontend Developer & UI Engineer",
     description:
       "A modern portfolio showcasing the work of Malay Patel — React, Next.js, UI engineering, animations, and high-performance web development.",
-    images: ["/og-image.png"],
+    images: ["https://malaypatel.com/og-image.png"],
   },
 
   icons: {
