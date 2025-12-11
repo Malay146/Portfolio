@@ -12,6 +12,7 @@
     "@react-three/postprocessing": "^3.0.4",
     "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
+    "gsap": "^3.14.1",
     "next": "16.0.7",
     "postprocessing": "^6.38.0",
     "react": "19.2.0",

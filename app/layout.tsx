@@ -8,6 +8,11 @@ import {
 import doto from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import TransitionProvider from "@/components/Transition/TransitionProvider";
+import StripGridVertical from "@/components/StripGridVertical";
+import Widgets from "@/components/Widgets";
+import Footer from "@/components/Footer";
+import StripGridHorizontal from "@/components/StripGridHorizontal";
 
 // ----------------- Fonts -----------------
 const dotoFont = doto({
@@ -45,7 +50,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://malaypatel.com"), // ← Change here if using a different domain
 
   title: {
-    default: "Malay Patel — Fullstack Developer & UI Engineer, enthusiast about modern web",
+    default:
+      "Malay Patel — Fullstack Developer & UI Engineer, enthusiast about modern web",
     template: "%s | Malay Patel",
   },
 
@@ -87,7 +93,6 @@ export const metadata: Metadata = {
         alt: "Malay Patel Portfolio Hero Image",
       },
     ],
-    
   },
 
   twitter: {
@@ -134,7 +139,23 @@ export default function RootLayout({
         antialiased selection:bg-purple-700 selection:text-purple-100 bg-black selection:font-pixelify`}
       >
         <Analytics />
-        {children}
+        <TransitionProvider>
+          <div className="w-full min-h-screen bg-black">
+            <div className="max-w-5xl min-h-full mx-auto flex">
+              <div className="hidden lg:block">
+                <StripGridVertical />
+              </div>
+              <div className="flex flex-col w-full">
+                <Widgets />
+                {children}
+                <Footer />
+              </div>
+              <div className="hidden lg:block">
+                <StripGridVertical />
+              </div>
+            </div>
+          </div>
+        </TransitionProvider>
       </body>
     </html>
   );

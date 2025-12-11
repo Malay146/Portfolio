@@ -3,7 +3,7 @@ import Dither from './Dither'
 
 const Hero1 = () => {
   return (
-    <div className='w-full h-50 md:h-60 relative border border-b-white/50 overflow-hidden'>
+    <div className='w-full h-50 md:h-60 relative border border-b-white overflow-hidden'>
         <Dither 
         mouseRadius={0.4}
         />

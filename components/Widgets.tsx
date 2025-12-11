@@ -11,8 +11,12 @@ import CloudIcon from "./Icons/CloudIcon";
 import RainIcon from "./Icons/RainIcon";
 import YoutubeMusicIcon from "./Icons/YoutubeMusicIcon";
 import PlayIcon from "./Icons/PlayIcon";
+import { usePathname } from "next/navigation";
+import TransitionLink from "./Transition/TransitionLink";
 
-const Navbar = () => {
+const Widgets = () => {
+  const pathname = usePathname();
+
   const [dateStr, setDateStr] = useState<string>("");
   const [timeStr, setTimeStr] = useState<string>("");
 
@@ -24,8 +28,6 @@ const Navbar = () => {
 
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
   const CITY = "Surat"; // change to your city
-
-  
 
   useEffect(() => {
     const updateClock = () => {
@@ -124,7 +126,6 @@ const Navbar = () => {
   if (!track) return <div>Loading…</div>;
 
   const links = [
-    // { name: "Blog", href: "#" },
     {
       name: <LinkedInIcons />,
       href: "https://www.linkedin.com/in/malay-patel-b154512a1/",
@@ -140,11 +141,13 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full flex justify-between items-center space-x-3 text-white text-sm border-b border-white/50 p-4">
+    <div className="w-full flex justify-between items-center space-x-3 text-white text-sm border-x border-b border-white md:border-b md:border-white p-4">
       {/* Time and Temp */}
       <div className="flex gap-4">
         <div className="Time flex flex-col">
-          <div className="font-inter font-bold text-[10px] md:text-[14px]">{dateStr}</div>
+          <div className="font-inter font-bold text-[10px] md:text-[14px]">
+            {dateStr}
+          </div>
           <div className="font-roboto-condensed font-thin text-[20px] md:text-[24px] text-white/50 leading-none tracking-tighter">
             {timeStr}
           </div>
@@ -191,7 +194,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-1 items-center justify-center">
-          <Button  href={track.url} className="p-1.5 hover:bg-zinc-900/10">
+          <Button href={track.url} className="p-1.5 hover:bg-zinc-900/10">
             <PlayIcon className="size-5" />
           </Button>
         </div>
@@ -199,6 +202,20 @@ const Navbar = () => {
 
       {/* Links */}
       <div className="flex space-x-1.5">
+        {pathname === "/" ? (
+          <TransitionLink href="/blogs">
+          <Button target="_self">
+            Blog
+          </Button>
+          </TransitionLink>
+        ) : pathname === "/blogs" ? (
+          <TransitionLink href="/">
+          <Button target="_self">
+            Home
+          </Button>
+          </TransitionLink>
+        ) : null}
+
         {links.map((link) => (
           <Button key={link.href} href={link.href}>
             {link.name}
@@ -209,4 +226,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Widgets;
