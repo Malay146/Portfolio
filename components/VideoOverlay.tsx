@@ -19,7 +19,7 @@ export default function VideoOverlay({
       {/* Thumbnail */}
       <div
         onClick={() => setOpen(true)}
-        className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer group border-3 border-gray-300/20 hover:border-gray-300/40 transition"
+        className="relative w-full aspect-video rounded-2xl overflow-hidden cursor-pointer group border-3 border-zinc-400/60 hover:border-zinc-400 transition"
       >
         <img
           src={thumbnail}
@@ -32,7 +32,7 @@ export default function VideoOverlay({
 
         {/* Play button */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="size-16 rounded-full bg-zinc-800 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <div className="size-16 rounded-full bg-zinc-800 border-2 border-zinc-400/60 group-hover:border-zinc-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
             <PlayIcon className="size-10 text-white/90" />
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function VideoOverlay({
       {/* Fullscreen Video Overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center backdrop-blur-[3px] cursor-pointer"
           onClick={() => setOpen(false)}
         >
           <div

@@ -22,12 +22,12 @@ const page = () => {
           </h2>
         </div>
         {/* Blog options */}
-        <div className="text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30 ">
-          <h3 className="font-roboto-mono tracking-tighter text-[12px] md:text-[16px] font-light hover:bg-white/10 transition-all duration-100 cursor-pointer">
-            -Next.js page transition with entry and exit animations
+        <div className="text-white/70 flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30 p-1">
+          <h3 className="leading-none font-roboto-mono tracking-tighter text-[12px] md:text-[16px] font-light hover:bg-white/10 hover:text-white hover:font-medium transition-all duration-100 cursor-pointer">
+            - Next.js page transition with entry and exit animations
           </h3>
-          <h3 className="font-roboto-mono tracking-tighter text-[12px] md:text-[16px] font-light hover:bg-white/10 transition-all duration-100 cursor-pointer">
-            -more coming soon...
+          <h3 className="leading-none font-roboto-mono tracking-tighter text-[12px] md:text-[16px] font-light hover:bg-white/10 hover:text-white hover:font-medium transition-all duration-100 cursor-pointer mt-1">
+            - more coming soon...
           </h3>
         </div>
         <StripGridHorizontal className="h-10 md:h-12" />
@@ -53,7 +53,7 @@ const page = () => {
             and more professional.In this guide, we’ll build a clean and simple
             overlay-based page transition:
           </p>
-          <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
+          <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100 ml-2 md:ml-0">
             <li>Exit animation runs before navigation</li>
             <li>Entry animation runs after navigation</li>
             <li>Works across all routes</li>
@@ -80,15 +80,12 @@ const page = () => {
             <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
               1. A Transition Provider
             </p>
-            <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
+            <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100 ml-2 md:ml-0">
               <li>Renders overlay blocks</li>
               <li>Runs GSAP animations</li>
               <li>
-                Exposes a{" "}
-                <span className="inline-block px-2 rounded-md bg-zinc-800 border border-zinc-500 text-white font-bold">
-                  navigate()
-                </span>{" "}
-                function through React Context
+                Exposes a {spanTag({ text: "navigate()" })} function through
+                React Context
               </li>
             </ul>
           </div>
@@ -102,13 +99,10 @@ const page = () => {
             <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
               2. A Transition Link
             </p>
-            <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
+            <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100 ml-2 md:ml-0">
               <li>
-                Calls{" "}
-                <span className="inline-block px-1 rounded-md bg-zinc-800 border border-zinc-500 text-white font-bold">
-                  navigate()
-                </span>{" "}
-                instead of directly routing
+                Calls {spanTag({ text: "navigate()" })} instead of directly
+                routing
               </li>
             </ul>
           </div>
@@ -122,7 +116,7 @@ const page = () => {
             <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
               3. Wrapping the entire app
             </p>
-            <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
+            <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100 ml-2 md:ml-0">
               <li>So transitions run between all page</li>
             </ul>
           </div>
@@ -157,7 +151,7 @@ const page = () => {
           <p className="text-md hover:bg-white/10 transition-all duration-100 text-white font-bold">
             This component controls:
           </p>
-          <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
+          <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100 ml-2 md:ml-0">
             <li>Initial GSAP setup</li>
             <li>Exit animation</li>
             <li>Navigation</li>
@@ -280,9 +274,8 @@ export default TransitionProvider;
           )}
         >
           <p className="text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
-            This replaces{" "}
-            <span className="inline-block px-1 rounded-md bg-zinc-800 border border-zinc-500 text-white font-bold">{`<Link>`}</span>{" "}
-            so we can run animations before navigating.
+            This replaces {spanTag({ text: "<Link>" })} so we can run animations
+            before navigating.
           </p>
         </div>
 
@@ -334,7 +327,8 @@ export default TransitionLink;
           )}
         >
           <p className="text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
-            Wrap your app with the provider. This makes transitions work globally.
+            Wrap your app with the provider. This makes transitions work
+            globally.
           </p>
         </div>
 
@@ -432,8 +426,9 @@ export default function Home() {
           <div className="flex items-center justify-center p-2">
             <div className="relative w-[85%] aspect-video">
               <VideoOverlay
-              thumbnail="/PT.png"
-              videoSrc="/PageTransition.mp4"></VideoOverlay>
+                thumbnail="/PT.png"
+                videoSrc="/PageTransition.mp4"
+              ></VideoOverlay>
             </div>
           </div>
         </div>
@@ -443,3 +438,17 @@ export default function Home() {
 };
 
 export default page;
+
+export const spanTag = ({
+  className,
+  text,
+}: {
+  className?: string;
+  text: string;
+}) => {
+  return (
+    <span className="inline-block px-2 rounded-md bg-zinc-800 border border-zinc-500 text-white font-bold">
+      {text}
+    </span>
+  );
+};
