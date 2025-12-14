@@ -74,10 +74,10 @@ const page = () => {
           <div
             className={cn(
               "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-2"
+              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
             )}
           >
-            <p className="leading-4 hover:bg-white/10 transition-all duration-100 text-white font-bold">
+            <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
               1. A Transition Provider
             </p>
             <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
@@ -96,10 +96,10 @@ const page = () => {
           <div
             className={cn(
               "text-white flex flex-col justify-between px-4 md:px-16 border-b border-dashed border-white/30",
-              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
             )}
           >
-            <p className="leading-4 hover:bg-white/10 transition-all duration-100 text-white font-bold">
+            <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
               2. A Transition Link
             </p>
             <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
@@ -116,10 +116,10 @@ const page = () => {
           <div
             className={cn(
               "text-white flex flex-col justify-between px-4 md:px-16 border-b border-dashed border-white/30",
-              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
             )}
           >
-            <p className="leading-4 hover:bg-white/10 transition-all duration-100 text-white font-bold">
+            <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
               3. Wrapping the entire app
             </p>
             <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
@@ -150,11 +150,11 @@ const page = () => {
 
         <div
           className={cn(
-            "text-white flex flex-col justify-between px-4 md:px-16 border-b border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
           )}
         >
-          <p className="leading-4 text-md hover:bg-white/10 transition-all duration-100 text-white font-bold">
+          <p className="text-md hover:bg-white/10 transition-all duration-100 text-white font-bold">
             This component controls:
           </p>
           <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100">
@@ -276,10 +276,10 @@ export default TransitionProvider;
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
           )}
         >
-          <p className="leading-5 text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
+          <p className="text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
             This replaces{" "}
             <span className="inline-block px-1 rounded-md bg-zinc-800 border border-zinc-500 text-white font-bold">{`<Link>`}</span>{" "}
             so we can run animations before navigating.
@@ -330,10 +330,10 @@ export default TransitionLink;
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
           )}
         >
-          <p className="leading-5 text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
+          <p className="text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
             Wrap your app with the provider. This makes transitions work globally.
           </p>
         </div>
