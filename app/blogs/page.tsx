@@ -48,7 +48,7 @@ const page = () => {
             "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
           )}
         >
-          <p className="leading-5 font-medium text-white/80 hover:bg-white/10 transition-all duration-100">
+          <p className="font-medium text-white/80 hover:bg-white/10 transition-all duration-100">
             Page transitions can instantly make your Next.js app feel smoother
             and more professional.In this guide, we’ll build a clean and simple
             overlay-based page transition:
