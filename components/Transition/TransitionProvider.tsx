@@ -155,7 +155,7 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
       stagger: {
         grid: "auto",
         from: "random",
-        each: 0.01,
+        each: 0.015,
       },
       onComplete: () => {
         router.push(href);
@@ -171,7 +171,7 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
       stagger: {
         grid: "auto",
         from: "random",
-        each: 0.01,
+        each: 0.015,
       },
       onComplete: () => {
         isAnimatingRef.current = false;
