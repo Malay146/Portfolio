@@ -205,7 +205,7 @@ const Widgets = () => {
         {pathname === "/" ? (
           <TransitionLink href="/blogs">
             <Button target="_self" className="text-sm md:text-md tracking-tighter">
-              Blogs
+              Blog
             </Button>
           </TransitionLink>
         ) : pathname === "/blogs" ? (
