@@ -24,7 +24,7 @@ const page = () => {
         {/* Blog options */}
         <div className="text-white/70 flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30 p-1">
           <h3 className="leading-none font-roboto-mono tracking-tighter text-[12px] md:text-[16px] font-light hover:bg-white/10 hover:text-white hover:font-medium transition-all duration-100 cursor-pointer">
-            - Next.js page transition with entry and exit animations
+            - Next.js page transition with entry and exit animations using GSAP
           </h3>
           <h3 className="leading-none font-roboto-mono tracking-tighter text-[12px] md:text-[16px] font-light hover:bg-white/10 hover:text-white hover:font-medium transition-all duration-100 cursor-pointer mt-1">
             - more coming soon...
@@ -35,7 +35,7 @@ const page = () => {
         {/* Blog Entry 1 */}
         <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
           <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-            Next.js page transition with entry and exit animations
+            Next.js page transition with entry and exit animations using GSAP
             <TopLeft />
             <BottomRight />
           </h2>
@@ -81,7 +81,7 @@ const page = () => {
               1. A Transition Provider
             </p>
             <ul className="list-disc text-white/80 mt-2 hover:bg-white/10 transition-all duration-100 ml-2 md:ml-0">
-              <li>Renders overlay blocks</li>
+              <li>Renders overlay</li>
               <li>Runs GSAP animations</li>
               <li>
                 Exposes a {spanTag({ text: "navigate()" })} function through
