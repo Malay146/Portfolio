@@ -22,7 +22,7 @@ export function MacCodeBlock({ className, innerClassName, code, language = "ts"}
   return (
     <div
       className={cn(
-        "rounded-xl overflow-hidden bg-zinc-900 border border-white/10 shadow-lg",
+        "max-w-3xl rounded-xl overflow-hidden bg-zinc-900 border border-white/10 shadow-lg",
         className
       )}
     >
@@ -49,7 +49,7 @@ export function MacCodeBlock({ className, innerClassName, code, language = "ts"}
       <Highlight theme={themes.vsDark} code={code} language={language as any}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
-            className={cn("p-4 text-[8px] md:text-sm overflow-x-auto", innerClassName)}
+            className={cn("p-4 text-[8px] md:text-[12px] overflow-x-auto", innerClassName)}
             style={style}
           >
             {tokens.map((line, i) => {

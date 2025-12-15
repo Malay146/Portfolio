@@ -11,7 +11,7 @@ import VideoOverlay from "@/components/VideoOverlay";
 
 const page = () => {
   return (
-    <div className="w-full min-h-[70vh] border-x border-white flex flex-col lg:border-x-0">
+    <div className="w-full border-x border-white flex flex-col lg:border-x-0">
       <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
         {/* Blog Title */}
         <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
