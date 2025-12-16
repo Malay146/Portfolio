@@ -98,7 +98,6 @@
 
 // export default TransitionProvider;
 
-
 "use client";
 
 import React, { useState, useEffect, useRef, createContext } from "react";
@@ -173,6 +172,7 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
         from: "random",
         each: 0.02,
       },
+      delay: 0.2,
       onComplete: () => {
         isAnimatingRef.current = false;
       },
@@ -206,7 +206,7 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
             ref={(el) => {
               if (el) blocksRef.current[i] = el;
             }}
-            className="bg-zinc-950 w-full h-full flex-1 p-0 m-0 border border-dashed border-zinc-800 box-border"
+            className="bg-zinc-950 w-full h-full flex-1 p-0 m-0 border border-dashed border-zinc-700 box-border"
           />
         ))}
       </div>
