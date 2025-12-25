@@ -3,10 +3,7 @@ import BottomRight from "@/components/Lcorner/BottomRight";
 import TopLeft from "@/components/Lcorner/TopLeft";
 import StripGridHorizontal from "@/components/StripGridHorizontal";
 import { cn } from "@/lib/cn";
-import { useState } from "react";
-import { Highlight, themes } from "prism-react-renderer";
 import { MacCodeBlock } from "@/components/MacCodeBlock";
-import Image from "next/image";
 import VideoOverlay from "@/components/VideoOverlay";
 
 const page = () => {

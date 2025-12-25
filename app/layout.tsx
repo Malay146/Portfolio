@@ -12,7 +12,6 @@ import TransitionProvider from "@/components/Transition/TransitionProvider";
 import StripGridVertical from "@/components/StripGridVertical";
 import Widgets from "@/components/Widgets";
 import Footer from "@/components/Footer";
-import StripGridHorizontal from "@/components/StripGridHorizontal";
 
 // ----------------- Fonts -----------------
 const dotoFont = doto({
@@ -141,16 +140,21 @@ export default function RootLayout({
         <Analytics />
         <TransitionProvider>
           <div className="w-full min-h-screen bg-black">
-            <div className="max-w-5xl min-h-full mx-auto flex">
-              <div className="hidden lg:block">
+            <div className="mx-auto flex max-w-5xl">
+              {/* Left strip */}
+              <div className="hidden lg:block shrink-0">
                 <StripGridVertical />
               </div>
-              <div className="flex flex-col w-full">
+
+              {/* Main content */}
+              <main className="flex-1 min-w-0">
                 <Widgets />
                 {children}
                 <Footer />
-              </div>
-              <div className="hidden lg:block">
+              </main>
+
+              {/* Right strip */}
+              <div className="hidden lg:block shrink-0">
                 <StripGridVertical />
               </div>
             </div>

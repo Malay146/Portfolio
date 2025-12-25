@@ -122,6 +122,8 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
   const isAnimatingRef = useRef(false);
   const firstRenderRef = useRef(true);
 
+  const [isLocked, setIsLocked] = useState(false);
+
   const [grid, setGrid] = useState({ cols: 0, rows: 0 });
 
   // Calculate grid based on screen
@@ -147,6 +149,8 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
   const navigate = (href: string) => {
     if (isAnimatingRef.current || href === pathname) return;
     isAnimatingRef.current = true;
+
+    setIsLocked(true); // 🔒 lock clicks
 
     gsap.to(blocksRef.current, {
       visibility: "visible",
@@ -175,6 +179,8 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
       delay: 0.2,
       onComplete: () => {
         isAnimatingRef.current = false;
+
+        setIsLocked(false); // 🔓 unlock clicks
       },
     });
   };
@@ -194,7 +200,9 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
 
       {/* Pixel Overlay */}
       <div
-        className="fixed inset-0 grid pointer-events-none z-9999"
+        className={`fixed inset-0 grid z-9999 ${
+          isLocked ? "pointer-events-auto" : "pointer-events-none"
+        }`}
         style={{
           gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
           gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
@@ -206,7 +214,7 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
             ref={(el) => {
               if (el) blocksRef.current[i] = el;
             }}
-            className="bg-zinc-950 w-full h-full flex-1 p-0 m-0 border border-dashed border-zinc-700 box-border"
+            className="bg-zinc-950 w-full h-full flex-1 p-0 m-0 border border-dashed border-zinc-600 box-border"
           />
         ))}
       </div>
