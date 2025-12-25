@@ -444,7 +444,7 @@ export const spanTag = ({
   text: string;
 }) => {
   return (
-    <span className="inline-block px-2 rounded-md bg-zinc-800 border border-zinc-500 text-white font-bold">
+    <span className="inline-block px-0.5 md:px-2 rounded-sm md:rounded-md bg-zinc-800 border border-zinc-500 text-white font-bold">
       {text}
     </span>
   );
