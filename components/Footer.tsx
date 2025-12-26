@@ -24,7 +24,7 @@ const Footer = () => {
           </p>
           <p className="text-white/60 text-[8px] md:text-[14px] flex items-center justify-center gap-1">
             <CopyrightIcon className="inline-block size-3 md:size-4" />
-            2025. All rights reserved.
+            {new Date().getFullYear()}. All rights reserved.
           </p>
         </div>
       </div>
@@ -43,7 +43,7 @@ export const CopyrightIcon = ({ className }: { className?: string }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={cn(
