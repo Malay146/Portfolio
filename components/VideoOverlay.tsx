@@ -61,7 +61,7 @@ export default function VideoOverlay({
               src={videoSrc}
               autoPlay
               controls
-              className="w-full h-full border-3 border-zinc-600 rounded-2xl"
+              className="w-full h-full border-3 border-zinc-400/60 rounded-2xl"
             />
           </div>
         </div>

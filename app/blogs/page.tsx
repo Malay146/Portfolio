@@ -403,19 +403,21 @@ export default function Home() {
             "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light"
           )}
         >
-          <div className="flex flex-col w-full h-full md:border-r md:border-dashed border-white/30 px-2 py-2">
-            <h2 className="font-medium text-white/70">
+          <div className="flex flex-col w-full h-full md:border-r md:border-dashed border-white/30 px-2 py-2 ">
+            <h2 className="font-medium text-white/70 hover:bg-white/10 transition-all duration-100">
               With just a small setup, you now have:
             </h2>
-            <p>✔ Simple overlay page transitions</p>
-            <p>✔ Smooth exit + entry animations</p>
-            <p>
-              ✔ Reusable{" "}
-              <span className="inline-block">{`<TransitionLink>`}</span>
-            </p>
-            <p>✔ No complex styling required</p>
-            <p>✔ Automatically works across all routes</p>
-            <h2 className="text-white font-bold mt-2">
+            <div className="hover:bg-white/10 transition-all duration-100">
+              <p>✔ Simple overlay page transitions</p>
+              <p>✔ Smooth exit + entry animations</p>
+              <p>
+                ✔ Reusable{" "}
+                <span className="inline-block">{`<TransitionLink>`}</span>
+              </p>
+              <p>✔ No complex styling required</p>
+              <p>✔ Automatically works across all routes</p>
+            </div>
+            <h2 className="text-white font-bold mt-2 hover:bg-white/10 transition-all duration-100">
               This is a minimal, clean, production-ready GSAP transition system
               for Next.js App Router.
             </h2>
