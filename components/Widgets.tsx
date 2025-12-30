@@ -15,8 +15,8 @@ import { usePathname } from "next/navigation";
 import TransitionLink from "./Transition/TransitionLink";
 
 const Widgets = () => {
-  const pathname = usePathname();
 
+  const pathname = usePathname();
   const [dateStr, setDateStr] = useState<string>("");
   const [timeStr, setTimeStr] = useState<string>("");
 
@@ -164,7 +164,7 @@ const Widgets = () => {
       </div>
 
       {/* YT Music */}
-      <div className="h-17 bg-zinc-900 rounded-lg border border-white/30 md:flex gap-2 p-1.5 shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
+      <div className="h-17 bg-zinc-900 rounded-lg border border-white/30 md:flex gap-2 p-1.5  shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
         <div className="size-14 rounded-sm border border-white/30 relative overflow-hidden my-auto">
           {track.image && (
             <img
@@ -204,13 +204,19 @@ const Widgets = () => {
       <div className="flex space-x-1.5">
         {pathname === "/" ? (
           <TransitionLink href="/blogs">
-            <Button target="_self" className="text-sm md:text-md tracking-tighter">
-              Blog
-            </Button>
+              <Button
+                target="_self"
+                className="text-sm md:text-md tracking-tighter"
+              >
+                Blog
+              </Button>
           </TransitionLink>
         ) : pathname === "/blogs" ? (
           <TransitionLink href="/">
-            <Button target="_self" className="text-sm md:text-md tracking-tighter">
+            <Button
+              target="_self"
+              className="text-sm md:text-md tracking-tighter"
+            >
               Home
             </Button>
           </TransitionLink>

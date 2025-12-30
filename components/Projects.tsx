@@ -1,3 +1,4 @@
+"use client";
 import React, { JSX } from "react";
 import TopLeft from "./Lcorner/TopLeft";
 import BottomRight from "./Lcorner/BottomRight";
@@ -16,6 +17,7 @@ import TailwindIcon from "./Icons/TailwindIcon";
 import GSAPIcon from "./Icons/GSAPIcon";
 import GithubTechIcon from "./Icons/GithubTechIcon";
 import { projects } from "@/data/projects";
+import { useHoverSound } from "@/hooks/useHoverSound";
 
 export const techIcons: Record<string, JSX.Element> = {
   ReactJS: <ReactIcon />,
@@ -39,6 +41,8 @@ const Projects = () => {
     ,
   ];
 
+  const { play } = useHoverSound();
+
   return (
     <div className="py-3 md:py-6 flex flex-col gap-3 md:gap-4">
       <div className="text-white flex justify-between items-center px-6 md:px-16 border-y border-dashed border-white/30">
@@ -55,7 +59,7 @@ const Projects = () => {
           className="border-y border-dashed border-white/30 flex"
         >
           <div className="w-[275px] md:w-[550px] relative overflow-hidden cursor-pointer aspect-1200/630">
-            <Link href={project.imageLink} target="_blank">
+            <Link onMouseEnter={play} href={project.imageLink} target="_blank">
               <Image
                 src={project.imageSrc}
                 alt={project.title}

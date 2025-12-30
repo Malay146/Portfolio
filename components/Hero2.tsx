@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import LocationIcon from "./Icons/LocationIcon";
@@ -8,6 +9,7 @@ import BottomLeft from "./Lcorner/BottomLeft";
 import BottomRight from "./Lcorner/BottomRight";
 import TopRight from "./Lcorner/TopRight";
 import Link from "next/link";
+import { useHoverSound } from "@/hooks/useHoverSound";
 
 const Hero2 = () => {
   const info = [
@@ -21,6 +23,8 @@ const Hero2 = () => {
       text: "Get in touch",
     },
   ];
+
+  const { play } = useHoverSound();
 
   return (
     <div className="w-full h-45 md:h-65 text-8xl text-white flex items-center justify-center">
@@ -36,8 +40,6 @@ const Hero2 = () => {
             </h1>
             <TopLeft />
             <BottomLeft />
-            {/* <TopRight className="md:hidden" />
-            <BottomRight className="md:hidden" /> */}
           </div>
         </div>
         <div className="w-full border-y border-dashed border-white/50 flex">
@@ -68,7 +70,8 @@ const Hero2 = () => {
             key={index}
             className="flex items-center border-y border-dashed border-white/50 "
           >
-            <div className="border-r border-dashed border-white/50 size-8 md:size-14 p-2 md:p-4 flex items-center justify-center relative hover:bg-white/20 transition-all duration-100 cursor-default">
+            <div
+             className="border-r border-dashed border-white/50 size-8 md:size-14 p-2 md:p-4 flex items-center justify-center relative hover:bg-white/20 transition-all duration-100 cursor-default">
               {item.text === "Get in touch" ? (
                 <>
                   <Link
@@ -76,6 +79,7 @@ const Hero2 = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center cursor-pointer"
+                    onMouseEnter={play}
                   >
                     <GetintouchIcon className="size-4 md:size-6" />
                   </Link>
@@ -88,7 +92,7 @@ const Hero2 = () => {
             </div>
 
             {item.text === "Get in touch" ? (
-              <Link href="mailto:pmalay694@gmail.com" target="_blank" rel="noopener noreferrer">
+              <Link onMouseEnter={play} href="mailto:pmalay694@gmail.com" target="_blank" rel="noopener noreferrer">
                 <h1 className="p-1 font-normal md:font-bold md:p-3 text-white/80 md:text-white/50 text-[8px] tracking-tighter md:text-[16px] lg:text-[18px] whitespace-nowrap hover:text-white cursor-pointer">
                   {item.text}
                 </h1>
@@ -98,10 +102,6 @@ const Hero2 = () => {
                 {item.text}
               </h1>
             )}
-
-            {/* <h1 className="p-1 font-normal md:font-bold md:p-3 text-white/80 md:text-white/50 text-[8px] tracking-tighter md:text-[16px] lg:text-[18px] whitespace-nowrap">
-              {item.text}
-            </h1> */}
           </div>
         ))}
       </div>
