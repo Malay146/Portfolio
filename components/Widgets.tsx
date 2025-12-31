@@ -164,8 +164,8 @@ const Widgets = () => {
       </div>
 
       {/* YT Music */}
-      <div className="h-17 bg-zinc-900 rounded-lg border border-white/30 md:flex gap-2 p-1.5  shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
-        <div className="size-14 rounded-sm border border-white/30 relative overflow-hidden my-auto">
+      <div className="h-17 bg-zinc-900 rounded-2xl border border-white/30 md:flex gap-2 pl-1 pr-2  shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
+        <div className="size-14 rounded-xl border border-white/30 relative overflow-hidden my-auto">
           {track.image && (
             <img
               src={track.image}
@@ -175,7 +175,7 @@ const Widgets = () => {
           )}
         </div>
 
-        <div className="flex flex-col justify-between font-inter mt-1 gap-2 mr-3">
+        <div className="flex flex-col justify-center font-inter gap-3 mr-3">
           <div className="flex items-center gap-1">
             <YoutubeMusicIcon className="size-4 inline-block" />
             <h1 className="leading-none text-[10px] text-white/50 tracking-tighter uppercase font-bold whitespace-nowrap">
