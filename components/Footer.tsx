@@ -1,6 +1,7 @@
 import { cn } from "@/lib/cn";
 import React from "react";
 import StripGridHorizontal from "./StripGridHorizontal";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -14,9 +15,9 @@ const Footer = () => {
         <div className="font-roboto-mono flex flex-col text-center gap-2 text-sm md:text-base tracking-tight mt-5 md:mt-10">
           <p className="text-white/80 font-light text-[10px] md:text-[16px]">
             Crafted at 2AM by{" "}
-            <span className="inline-block text-white font-bold">
+            <Link href="https://x.com/pmalay694" className="inline-block text-white font-bold hover:underline" target="_blank" rel="noopener noreferrer">
               MalayPatel
-            </span>
+            </Link>
           </p>
           <p className="text-white/60 text-[8px] md:text-[14px]">
             “Powered by creativity, fueled by caffeine and created in dark

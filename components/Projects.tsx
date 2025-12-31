@@ -18,6 +18,13 @@ import GSAPIcon from "./Icons/GSAPIcon";
 import GithubTechIcon from "./Icons/GithubTechIcon";
 import { projects } from "@/data/projects";
 import { useHoverSound } from "@/hooks/useHoverSound";
+import FirebaseIcon from "./Icons/FirebaseIcon";
+import ExpressjsIcon from "./Icons/ExpressjsIcon";
+import NodejsIcon from "./Icons/NodejsIcon";
+import MongodbIcon from "./Icons/MongodbIcon";
+import ThreejsIcon from "./Icons/ThreejsIcon";
+import FigmaIcon from "./Icons/FigmaIcon";
+import FramerMotionIcon from "./Icons/FramerMotionIcon";
 
 export const techIcons: Record<string, JSX.Element> = {
   ReactJS: <ReactIcon />,
@@ -27,6 +34,13 @@ export const techIcons: Record<string, JSX.Element> = {
   Vercel: <VercelIcon />,
   GSAP: <GSAPIcon />,
   GitHub: <GithubTechIcon />,
+  MongoDB: <MongodbIcon />,
+  "Node.js": <NodejsIcon />,
+  "Express.js": <ExpressjsIcon />,
+  Firebase: <FirebaseIcon />,
+  "Three.js": <ThreejsIcon />,
+  Figma: <FigmaIcon />,
+  "Framer Motion": <FramerMotionIcon />,
 };
 
 const Projects = () => {
@@ -37,8 +51,14 @@ const Projects = () => {
     { name: "Vercel", icon: <VercelIcon /> },
     { name: "TailwindCSS", icon: <TailwindIcon /> },
     { name: "GSAP", icon: <GSAPIcon /> },
+    { name: "Framer Motion", icon: <FramerMotionIcon /> },
+    { name: "Figma", icon: <FigmaIcon />},
+    { name: "Three.js", icon: <ThreejsIcon /> },
     { name: "GitHub", icon: <GithubTechIcon /> },
-    ,
+    { name: "MongoDB", icon: <MongodbIcon /> },
+    { name: "Node.js", icon: <NodejsIcon /> },
+    { name: "Express.js", icon: <ExpressjsIcon /> },
+    { name: "Firebase", icon: <FirebaseIcon /> },
   ];
 
   const { play } = useHoverSound();

@@ -28,8 +28,8 @@ export const projects: Project[] = [
       "Vercel",
       "TailwindCSS",
       "GSAP",
-      "GitHub"
-    ]
+      "GitHub",
+    ],
   },
   {
     id: "portfolio",
@@ -40,14 +40,26 @@ export const projects: Project[] = [
     title: "Portfolio",
     description:
       "A modern dark-aesthetic portfolio designed with minimal UI, crisp typography, and subtle animations to highlight my projects and development approach.",
-    status: "In Progress",
+    status: "Completed",
     techstack: [
       "ReactJS",
       "NextJS",
       "Typescript",
       "Vercel",
       "TailwindCSS",
-      "GitHub"
-    ]
+      "GitHub",
+    ],
+  },
+  {
+    id: "Solar System Explorer",
+    imageSrc: "/solarsystem.png",
+    imageLink: "https://solar-system-five-psi.vercel.app/",
+    webLink: "https://solar-system-five-psi.vercel.app/",
+    githubLink: "https://github.com/Malay146/SolarSystem",
+    title: "Solar System Explorer",
+    description:
+      "An interactive 3D web experience that lets users explore the solar system in 3D, providing detailed information about each planet along with engaging visuals and animations.",
+    status: "In Progress",
+    techstack: ["Three.js", "Node.js", "Vercel", "TailwindCSS", "GitHub"],
   },
 ];
