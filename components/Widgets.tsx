@@ -164,7 +164,7 @@ const Widgets = () => {
       </div>
 
       {/* YT Music */}
-      <div className="h-17 bg-zinc-900 rounded-2xl border border-white/30 md:flex gap-2 pl-1 pr-2  shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
+      <div className="h-17 bg-zinc-900 rounded-2xl border border-white/30 md:flex gap-2 px-1 shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
         <div className="size-14 rounded-xl border border-white/30 relative overflow-hidden my-auto">
           {track.image && (
             <img
