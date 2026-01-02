@@ -1,9 +1,16 @@
+"use client";
 import { cn } from "@/lib/cn";
 import React from "react";
 import StripGridHorizontal from "./StripGridHorizontal";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const Footer = () => {
+  const [year, setYear] = useState<number | null>(null);
+  useEffect(() => {
+    const currentYear = new Date().getFullYear();
+    setYear(currentYear);
+  }, []);
   return (
     <div className="w-full flex flex-col border-x border-white lg:border-none">
       <StripGridHorizontal className="h-10 md:h-12" />
@@ -25,7 +32,7 @@ const Footer = () => {
           </p>
           <p className="text-white/60 text-[8px] md:text-[14px] flex items-center justify-center gap-1">
             <CopyrightIcon className="inline-block size-3 md:size-4" />
-            {new Date().getFullYear()}. All rights reserved.
+            {year}. All rights reserved.
           </p>
         </div>
       </div>

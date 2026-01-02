@@ -13,6 +13,7 @@ import TransitionProvider from "@/components/Transition/TransitionProvider";
 import StripGridVertical from "@/components/StripGridVertical";
 import Widgets from "@/components/Widgets";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 // ----------------- Fonts -----------------
 const dotoFont = doto({
@@ -148,7 +149,8 @@ export default function RootLayout({
               </div>
 
               {/* Main content */}
-              <main className="flex-1 min-w-0">
+              <main className="flex-1 min-w-0 relative">
+                {/* <Navbar /> */}
                 <Widgets />
                 {children}
                 <Footer />
