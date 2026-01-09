@@ -28,13 +28,13 @@ export default function Page() {
 
       {/* Tabs */}
       <div
-        className="flex rounded-xl items-center justify-center cursor-pointer bg-zinc-800 p-0.5 sm:p-1 gap-1 sm:gap-2 md:gap-3 lg:gap-4 overflow-x-auto"
+        className="flex rounded-md sm:rounded-lg md:rounded-xl items-center justify-center cursor-pointer bg-zinc-800 p-0.5 sm:p-1 gap-0.5 sm:gap-1 md:gap-2 lg:gap-3 xl:gap-4 overflow-x-auto"
         onMouseLeave={handleMouseLeave}
         >
         {tabs.map((tab) => (
           <div
           key={tab}
-          className="relative px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3"
+          className="relative px-1.5 py-1 sm:px-2 sm:py-1.5 md:px-3 md:py-2 lg:px-4 lg:py-2.5 xl:px-5 xl:py-3"
           onMouseEnter={() => handleMouseEnter(tab)}
           onClick={() => handleMouseEnter(tab)}
           >
@@ -42,7 +42,7 @@ export default function Page() {
             {active === tab && (
               <motion.div
                 layoutId="hover-indicator"
-                className="absolute inset-x-1 inset-y-1 sm:inset-x-1.5 sm:inset-y-1 md:inset-x-2 md:inset-y-1.5 lg:inset-x-2.5 lg:inset-y-1.5 xl:inset-x-3 xl:inset-y-2 rounded-md bg-zinc-700 z-0"
+                className="absolute inset-x-0.5 inset-y-0.5 sm:inset-x-1 sm:inset-y-1 md:inset-x-1.5 md:inset-y-1 lg:inset-x-2 lg:inset-y-1.5 xl:inset-x-2.5 xl:inset-y-2 rounded sm:rounded-md bg-zinc-700 z-0"
                 transition={{
                   type: "spring",
                   stiffness: 500,
@@ -55,7 +55,7 @@ export default function Page() {
                 }}
               />
             )}
-            <span className="relative z-10 text-[10px] sm:text-xs md:text-sm font-medium text-zinc-100 cursor-pointer whitespace-nowrap">
+            <span className="relative z-10 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium text-zinc-100 cursor-pointer whitespace-nowrap">
               {tab}
             </span>
 

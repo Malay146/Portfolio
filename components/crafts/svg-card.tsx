@@ -25,42 +25,61 @@ const BOX_POSITIONS = [
 
 const SVGCardPage = () => {
   return (
-    <div 
-    className="w-full flex items-center justify-center gap-4 relative scale-50 xs:scale-60 sm:scale-75 md:scale-85 lg:scale-95 xl:scale-100">
+    <div className="w-full flex items-center justify-center relative gap-4 p-4">
+      <div
+        className="
+      relative
+      scale-[0.8]
+      lg:scale-[0.9]
+      xl:scale-100
+    "
+      >
+        <div className="size-100 bg-zinc-900 rounded-2xl border border-zinc-600 hover:border-zinc-500 transition-colors duration-300 flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_16px_rgba(255,255,255,0.125),inset_0_0_24px_rgba(255,255,255,0.125),inset_0_0_32px_rgba(0,0,0,0.3)]">
+          {/* Center Icon */}
+          <div
+            className="
+    size-24
+    aspect-square
+    shrink-0
+    bg-zinc-800
+    flex items-center justify-center
+    rounded-lg
+    border border-blue-500
+    shadow-[0_0_12px_rgba(59,130,246,0.6),inset_5px_5px_12px_rgba(0,0,0,0.5),inset_-4px_-4px_12px_rgba(255,255,255,0.125)]
+    drop-shadow-[0_0_12px_rgba(59,130,246,0.2)]
+    relative z-50
+  "
+            style={{ aspectRatio: "1 / 1" }}
+          >
+            <BoltIcon className="text-blue-500 animate-pulse" />
+          </div>
 
-      <div className="size-100 bg-zinc-900 rounded-2xl border border-zinc-600 hover:border-zinc-500 transition-colors duration-300 flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_16px_rgba(255,255,255,0.125),inset_0_0_24px_rgba(255,255,255,0.125),inset_0_0_32px_rgba(0,0,0,0.3)]">
-        {/* Center Icon */}
-        <div className="size-24 bg-zinc-800 flex items-center justify-center rounded-lg border border-blue-500,
-         shadow-[0_0_12px_rgba(59,130,246,0.6),inset_5px_5px_12px_rgba(0,0,0,0.5),inset_-4px_-4px_12px_rgba(255,255,255,0.125)] ,
-         drop-shadow-[0_0_12px_rgba(59,130,246,0.2)] relative z-50">
-          <BoltIcon className="text-blue-500 animate-pulse" />
+          {/* Decorative Boxes */}
+          {BOX_POSITIONS.map((position, index) => (
+            <Box
+              key={index}
+              className={cn(position.top, position.left, position.right)}
+            />
+          ))}
+
+          {/* Horizontal Lines */}
+          <LineSVG />
+          <LineSVG className="left-auto right-3 rotate-180" />
+          <LineSVG className="left-auto top-25 rotate-90" />
+          <LineSVG className="left-auto top-77 -rotate-90" />
+
+          {/* Corner Lines - Top */}
+          <TopSVG />
+          <BottomSVG className="left-auto right-4 rotate-180 top-40" />
+          <TopSVG className="rotate-90 left-40 top-26" />
+          <BottomSVG className="left-auto right-40 top-26 rotate-90" />
+
+          {/* Corner Lines - Bottom */}
+          <BottomSVG />
+          <TopSVG className="left-auto right-4 rotate-180 top-60" />
+          <BottomSVG className="-rotate-90 left-40 top-77" />
+          <TopSVG className="left-auto -rotate-90 right-40 top-77" />
         </div>
-
-        {/* Decorative Boxes */}
-        {BOX_POSITIONS.map((position, index) => (
-          <Box
-            key={index}
-            className={cn(position.top, position.left, position.right)}
-          />
-        ))}
-
-        {/* Horizontal Lines */}
-        <LineSVG />
-        <LineSVG className="left-auto right-3 rotate-180" />
-        <LineSVG className="left-auto top-25 rotate-90" />
-        <LineSVG className="left-auto top-77 -rotate-90" />
-
-        {/* Corner Lines - Top */}
-        <TopSVG />
-        <BottomSVG className="left-auto right-4 rotate-180 top-40" />
-        <TopSVG className="rotate-90 left-40 top-26" />
-        <BottomSVG className="left-auto right-40 top-26 rotate-90" />
-
-        {/* Corner Lines - Bottom */}
-        <BottomSVG />
-        <TopSVG className="left-auto right-4 rotate-180 top-60" />
-        <BottomSVG className="-rotate-90 left-40 top-77" />
-        <TopSVG className="left-auto -rotate-90 right-40 top-77" />
       </div>
     </div>
   );
@@ -243,11 +262,7 @@ const BottomSVG = ({ className }: { className?: string }) => {
           className
         )}
       >
-        <path
-          d={cornerPath}
-          stroke="currentColor"
-          strokeWidth="2"
-        />
+        <path d={cornerPath} stroke="currentColor" strokeWidth="2" />
       </svg>
     </>
   );
