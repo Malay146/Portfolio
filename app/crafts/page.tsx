@@ -83,7 +83,7 @@ const page = () => {
             <div className="text-white flex flex-col justify-center items-center px-4 md:px-16 border-y border-dashed border-white/30">
               <div className="w-full">
                 <p className="font-roboto-mono tracking-tighter text-[10px] md:text-[12px] px-2 py-1 cursor-default text-zinc-400">
-                  1.1.2026
+                  {craft.date}
                 </p>
               </div>
               {craft.component}
