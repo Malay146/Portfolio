@@ -1,12 +1,14 @@
 "use client";
 
 import { useRef } from "react";
+import { useAudio } from "@/contexts/AudioContext";
 
 export const useHoverSound = (
   soundPath: string = "/sounds/subtle.mp3",
   volume = 0.07,
   delay = 0 // delay in ms
 ) => {
+  const { isMuted } = useAudio();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -16,7 +18,7 @@ export const useHoverSound = (
   }
 
   const play = () => {
-    if (!audioRef.current) return;
+    if (!audioRef.current || isMuted) return;
 
     // Clear previous delay (prevents stacking)
     if (timeoutRef.current) {

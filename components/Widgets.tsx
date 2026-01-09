@@ -15,7 +15,6 @@ import { usePathname } from "next/navigation";
 import TransitionLink from "./Transition/TransitionLink";
 
 const Widgets = () => {
-
   const pathname = usePathname();
   const [dateStr, setDateStr] = useState<string>("");
   const [timeStr, setTimeStr] = useState<string>("");
@@ -141,7 +140,7 @@ const Widgets = () => {
   ];
 
   return (
-    <div className="w-full flex justify-between items-center space-x-3 text-white text-sm border-x border-b border-white lg:border-x-0 lg:border-b lg:border-white p-4">
+    <div className="w-full flex justify-between items-center space-x-3 text-white text-sm border-x border-b border-white lg:border-x-0 lg:border-white p-4">
       {/* Time and Temp */}
       <div className="flex gap-4">
         <div className="Time flex flex-col">
@@ -202,26 +201,6 @@ const Widgets = () => {
 
       {/* Links */}
       <div className="flex space-x-1.5">
-        {pathname === "/" ? (
-          <TransitionLink href="/blogs">
-              <Button
-                target="_self"
-                className="text-sm md:text-md tracking-tighter"
-              >
-                Blog
-              </Button>
-          </TransitionLink>
-        ) : pathname === "/blogs" ? (
-          <TransitionLink href="/">
-            <Button
-              target="_self"
-              className="text-sm md:text-md tracking-tighter"
-            >
-              Home
-            </Button>
-          </TransitionLink>
-        ) : null}
-
         {links.map((link) => (
           <Button key={link.href} href={link.href}>
             {link.name}

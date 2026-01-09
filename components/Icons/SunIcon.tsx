@@ -1,76 +1,52 @@
+import { cn } from "@/lib/cn";
 import React from "react";
 
-const SunIcon = () => {
+const SunIcon = ({ className }: { className?: string }) => {
   return (
     <svg
-      width="17"
-      height="17"
-      viewBox="0 0 17 17"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className="inline-block"
+      className={cn("inline-block", className)}
     >
-      <g clipPath="url(#clip0_424_2)">
-        <path
-          d="M8.50004 12.0413C10.456 12.0413 12.0417 10.4557 12.0417 8.49967C12.0417 6.54367 10.456 4.95801 8.50004 4.95801C6.54403 4.95801 4.95837 6.54367 4.95837 8.49967C4.95837 10.4557 6.54403 12.0413 8.50004 12.0413Z"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M8.5 0.708008V2.12467"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M8.5 14.875V16.2917"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M2.98914 2.98926L3.99497 3.99509"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M13.005 13.0049L14.0108 14.0107"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M0.708374 8.5H2.12504"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M14.875 8.5H16.2917"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M2.98914 14.0107L3.99497 13.0049"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M13.005 3.99509L14.0108 2.98926"
-          stroke="white"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_424_2">
-          <rect width="17" height="17" fill="white" />
-        </clipPath>
-      </defs>
+      <path
+        d="M12 2.625C12.4142 2.625 12.75 2.96079 12.75 3.375V4.875C12.75 5.28921 12.4142 5.625 12 5.625C11.5858 5.625 11.25 5.28921 11.25 4.875V3.375C11.25 2.96079 11.5858 2.625 12 2.625Z"
+        fill="currentColor"
+      />
+      <path
+        d="M6.5 12.625C6.5 9.58743 8.96243 7.125 12 7.125C15.0376 7.125 17.5 9.58743 17.5 12.625C17.5 15.6626 15.0376 18.125 12 18.125C8.96243 18.125 6.5 15.6626 6.5 12.625Z"
+        fill="currentColor"
+      />
+      <path
+        d="M19.0713 6.61627C19.3642 6.32337 19.3642 5.8485 19.0713 5.55561C18.7785 5.26271 18.3036 5.26271 18.0107 5.55561L16.95 6.61627C16.6571 6.90916 16.6571 7.38403 16.95 7.67693C17.2429 7.96982 17.7178 7.96982 18.0107 7.67693L19.0713 6.61627Z"
+        fill="currentColor"
+      />
+      <path
+        d="M22 12.625C22 13.0392 21.6642 13.375 21.25 13.375H19.75C19.3358 13.375 19 13.0392 19 12.625C19 12.2108 19.3358 11.875 19.75 11.875H21.25C21.6642 11.875 22 12.2108 22 12.625Z"
+        fill="currentColor"
+      />
+      <path
+        d="M18.0107 19.6944C18.3036 19.9873 18.7785 19.9873 19.0713 19.6944C19.3642 19.4015 19.3642 18.9266 19.0713 18.6337L18.0107 17.5731C17.7178 17.2802 17.2429 17.2802 16.95 17.5731C16.6571 17.866 16.6571 18.3408 16.95 18.6337L18.0107 19.6944Z"
+        fill="currentColor"
+      />
+      <path
+        d="M12 19.625C12.4142 19.625 12.75 19.9608 12.75 20.375V21.875C12.75 22.2892 12.4142 22.625 12 22.625C11.5858 22.625 11.25 22.2892 11.25 21.875V20.375C11.25 19.9608 11.5858 19.625 12 19.625Z"
+        fill="currentColor"
+      />
+      <path
+        d="M7.04986 18.6397C7.34275 18.3468 7.34275 17.8719 7.04986 17.579C6.75697 17.2862 6.28209 17.2862 5.9892 17.579L4.92854 18.6397C4.63565 18.9326 4.63565 19.4075 4.92854 19.7004C5.22143 19.9933 5.69631 19.9933 5.9892 19.7004L7.04986 18.6397Z"
+        fill="currentColor"
+      />
+      <path
+        d="M5 12.625C5 13.0392 4.66421 13.375 4.25 13.375H2.75C2.33579 13.375 2 13.0392 2 12.625C2 12.2108 2.33579 11.875 2.75 11.875H4.25C4.66421 11.875 5 12.2108 5 12.625Z"
+        fill="currentColor"
+      />
+      <path
+        d="M5.9892 7.67096C6.28209 7.96385 6.75697 7.96385 7.04986 7.67096C7.34275 7.37806 7.34275 6.90319 7.04986 6.6103L5.9892 5.54963C5.69631 5.25674 5.22143 5.25674 4.92854 5.54963C4.63565 5.84253 4.63565 6.3174 4.92854 6.61029L5.9892 7.67096Z"
+        fill="currentColor"
+      />
     </svg>
   );
 };

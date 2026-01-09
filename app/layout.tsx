@@ -1,14 +1,15 @@
-
 import type { Metadata } from "next";
 import {
   Inter,
   Pixelify_Sans,
   Roboto_Mono,
   Roboto_Condensed,
+  Nabla,
 } from "next/font/google";
 import doto from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { AudioProvider } from "@/contexts/AudioContext";
 import TransitionProvider from "@/components/Transition/TransitionProvider";
 import StripGridVertical from "@/components/StripGridVertical";
 import Widgets from "@/components/Widgets";
@@ -139,30 +140,32 @@ export default function RootLayout({
         className={`${inter.variable} ${pixelifySans.variable} ${robotoMono.variable} ${robotoCondensed.variable} ${dotoFont.variable} 
         antialiased selection:bg-purple-700 selection:text-purple-100 bg-black selection:font-pixelify`}
       >
-        <Analytics />
-        <TransitionProvider>
-          <div className="w-full min-h-screen bg-black">
-            <div className="mx-auto flex max-w-5xl">
-              {/* Left strip */}
-              <div className="hidden lg:block shrink-0">
-                <StripGridVertical />
-              </div>
+        <AudioProvider>
+          <Analytics />
+          <TransitionProvider>
+            <div className="w-full min-h-screen bg-black">
+              <div className="mx-auto flex max-w-5xl">
+                {/* Left strip */}
+                <div className="hidden lg:block shrink-0">
+                  <StripGridVertical />
+                </div>
 
-              {/* Main content */}
-              <main className="flex-1 min-w-0 relative">
-                {/* <Navbar /> */}
-                <Widgets />
-                {children}
-                <Footer />
-              </main>
+                {/* Main content */}
+                <main className="flex-1 min-w-0 relative">
+                  <Navbar />
+                  <Widgets />
+                  {children}
+                  <Footer />
+                </main>
 
-              {/* Right strip */}
-              <div className="hidden lg:block shrink-0">
-                <StripGridVertical />
+                {/* Right strip */}
+                <div className="hidden lg:block shrink-0">
+                  <StripGridVertical />
+                </div>
               </div>
             </div>
-          </div>
-        </TransitionProvider>
+          </TransitionProvider>
+        </AudioProvider>
       </body>
     </html>
   );

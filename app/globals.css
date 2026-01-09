@@ -1,9 +1,29 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-inter: var(--font-inter);
   --font-pixelify: var(--font-pixelify);
   --font-roboto-mono: var(--font-roboto-mono);
   --font-roboto-condensed: var(--font-roboto-condensed);
    --font-doto: var(--font-doto); 
+}
+
+/* Hide scrollbar but keep scroll */
+.scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* globals.css */
+.goo {
+  @apply px-6 py-3 bg-black rounded-full;
+}
+.label {
+  @apply px-6 py-3 text-white font-semibold text-lg;
 }

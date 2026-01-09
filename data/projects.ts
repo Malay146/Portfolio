@@ -40,13 +40,15 @@ export const projects: Project[] = [
     title: "Portfolio",
     description:
       "A modern dark-aesthetic portfolio designed with minimal UI, crisp typography, and subtle animations to highlight my projects and development approach.",
-    status: "Completed",
+    status: "In Progress",
     techstack: [
       "ReactJS",
       "NextJS",
       "Typescript",
       "Vercel",
       "TailwindCSS",
+      "GSAP",
+      "Framer Motion",
       "GitHub",
     ],
   },
