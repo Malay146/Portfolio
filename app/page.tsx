@@ -20,9 +20,9 @@ export default function Home() {
       <StripGridHorizontal className="h-6 md:h-8" />
       <Experience />
       <StripGridHorizontal className="h-6 md:h-8" />
-      <TechnologyStack />
-      <StripGridHorizontal className="h-6 md:h-8" />
       <Projects />
+      <StripGridHorizontal className="h-6 md:h-8" />
+      <TechnologyStack />
       <StripGridHorizontal className="h-6 md:h-8" />
       <Education />
     </div>

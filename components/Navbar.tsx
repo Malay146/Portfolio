@@ -60,14 +60,14 @@ const Navbar = () => {
     <div
       ref={navRef}
       className={cn(
-        "px-4 py-2 bg-[#111111] text-white/60 font-inter border-2 border-[#555555] rounded-xl flex justify-between items-center gap-4 fixed bottom-8 left-1/2 transform -translate-x-1/2 z-99 shadow-[inset_3px_3px_6px_rgba(255,255,255,0.1),inset_-3px_-3px_6px_rgba(255,255,255,0.1)] leading-none",
+        "px-2 py-2 sm:px-4 bg-[#111111] text-white/60 font-inter border-2 border-[#555555] rounded-lg sm:rounded-xl flex justify-between items-center gap-2 sm:gap-4 fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-99 shadow-[inset_3px_3px_6px_rgba(255,255,255,0.1),inset_-3px_-3px_6px_rgba(255,255,255,0.1)] leading-none max-w-[calc(100vw-2rem)] sm:max-w-none",
         !isVisible && "pointer-events-none"
       )}
     >
       {navLinks.map((item, index) => (
         <TransitionLink key={index} href={item.href}>
           <p
-            className="cursor-pointer hover:text-white text-sm font-inter tracking-tight"
+            className="cursor-pointer hover:text-white text-xs sm:text-sm font-inter tracking-tight"
             onMouseEnter={play}
           >
             {item.name}
@@ -75,9 +75,9 @@ const Navbar = () => {
         </TransitionLink>
       ))}
 
-      <span className="inline-block w-px h-5 rounded-2xl border-r border-white"></span>
+      <span className="inline-block w-[0.5px] h-5 sm:h-6 rounded-2xl border border-white/60"></span>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <div onMouseEnter={play}>
           <VolumeToggle className="cursor-pointer hover:text-white" />
         </div>
@@ -98,9 +98,9 @@ const VolumeToggle = ({ className }: { className?: string }) => {
       aria-label={isMuted ? "Unmute" : "Mute"}
     >
       {isMuted ? (
-        <MuteIcon className="size-6" />
+        <MuteIcon className="size-5 sm:size-6" />
       ) : (
-        <VolumeIcon className="size-6" />
+        <VolumeIcon className="size-5 sm:size-6" />
       )}
     </button>
   );

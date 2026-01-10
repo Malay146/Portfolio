@@ -55,7 +55,7 @@ export default function Page() {
                 }}
               />
             )}
-            <span className="relative z-10 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium text-zinc-100 cursor-pointer whitespace-nowrap">
+            <span className="relative z-10 text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium text-zinc-100 cursor-pointer whitespace-nowrap flex items-center justify-center">
               {tab}
             </span>
 

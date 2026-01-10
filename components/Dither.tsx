@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree, ThreeEvent } from '@react-three/fiber';
 import { EffectComposer, wrapEffect } from '@react-three/postprocessing';
 import { Effect } from 'postprocessing';
 import * as THREE from 'three';
+import { cn } from '@/lib/cn';
 
 const waveVertexShader = `
 precision highp float;
@@ -308,11 +309,12 @@ export default function Dither({
   pixelSize = 2,
   disableAnimation = false,
   enableMouseInteraction = true,
-  mouseRadius = 1
-}: DitherProps) {
+  mouseRadius = 1,
+  className,
+}: DitherProps & { className?: string }) {
   return (
     <Canvas
-      className="w-full h-full relative"
+      className={cn("w-full h-full relative", className)}
       camera={{ position: [0, 0, 6] }}
       dpr={1}
       gl={{ antialias: true, preserveDrawingBuffer: true }}
