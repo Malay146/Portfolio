@@ -60,7 +60,7 @@ const Hero2 = () => {
           src="/pic2.png"
           alt="Description"
           fill
-          className="object-cover filter saturate-0 hover:saturate-150 transition-all duration-500"
+          className="object-cover filter saturate-0 hover:saturate-120 transition-all duration-500 ease-in-out"
         />
       </div>
 

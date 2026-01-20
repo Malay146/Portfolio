@@ -144,7 +144,7 @@ export default function RootLayout({
           <Analytics />
           <TransitionProvider>
             <div className="w-full min-h-screen bg-black">
-              <div className="mx-auto flex max-w-5xl">
+              <div className="mx-auto flex max-w-5xl ">
                 {/* Left strip */}
                 <div className="hidden lg:block shrink-0">
                   <StripGridVertical />
