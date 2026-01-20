@@ -9,9 +9,27 @@ import RandomLayout from "@/components/crafts/random-layout";
 import ChangeableTabs from "@/components/crafts/changeable-tabs";
 import GooeyMenu from "@/components/crafts/gooey-menu";
 import Incrementor from "@/components/crafts/incrementor";
+import InfiniteMenu from "@/components/crafts/infinite-menu";
+import GradientText from "@/components/crafts/gradient-text";
+import PurchaseButton from "@/components/crafts/purchase-sequence";
 
 // Define crafts configuration
 const crafts = [
+  {
+    title: "Purchase Sequence",
+    component: <PurchaseButton />, // Placeholder for the actual Purchase Sequence component
+    date: "20.1.2026",
+  },
+  {
+    title: "Gradient Text",
+    component: <GradientText />,
+    date: "20.1.2026",
+  },
+  {
+    title: "Infinite Menu",
+    component: <InfiniteMenu />,
+    date: "20.1.2026",
+  },
   {
     title: "Layout Animation",
     component: <LayoutAnimation />,
