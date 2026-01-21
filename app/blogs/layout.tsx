@@ -3,6 +3,26 @@ import BottomRight from "@/components/Lcorner/BottomRight";
 import TopLeft from "@/components/Lcorner/TopLeft";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Blogs",
+  description:
+    "Technical blogs on Next.js, GSAP animations, motion systems, and frontend architecture.",
+  keywords: [
+    "Blogs",
+    "Next.js",
+    "GSAP",
+    "Frontend Architecture",
+    "Web Development",
+    "Case Studies",
+    "Animations",
+    "Motion Systems",
+  ],
+  authors: [{ name: "Malay Patel", url: "https://malaypatel.com" }],
+  creator: "Malay Patel",
+  publisher: "Malay Patel",
+};
+
+
 export default function BlogsLayout({
   children,
 }: Readonly<{

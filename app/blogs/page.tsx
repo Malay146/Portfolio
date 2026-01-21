@@ -888,3 +888,9 @@ export const spanTag = ({
     </span>
   );
 };
+
+export const metadata = {
+  title: "Blogs",
+  description:
+    "Technical blogs on Next.js, GSAP animations, motion systems, and frontend architecture.",
+};
