@@ -53,12 +53,12 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Malay Patel — Fullstack Developer & UI Engineer, enthusiast about modern web",
+      "Malay Patel — Fullstack Developer & UI Engineer",
     template: "%s | Malay Patel",
   },
 
   description:
-    "Portfolio of Malay Patel, a fullstack developer specializing in React, Next.js, Tailwind CSS, animations, and modern UI engineering. Explore projects, experience, and skills.",
+    "Portfolio of Malay Patel, a fullstack developer specializing in React, Next.js, Tailwind CSS, animations, and modern UI engineering.",
 
   keywords: [
     "Malay Patel",
