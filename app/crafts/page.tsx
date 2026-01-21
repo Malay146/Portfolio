@@ -12,6 +12,45 @@ import Incrementor from "@/components/crafts/incrementor";
 import InfiniteMenu from "@/components/crafts/infinite-menu";
 import GradientText from "@/components/crafts/gradient-text";
 import PurchaseButton from "@/components/crafts/purchase-sequence";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
+  description:
+    "A collection of interactive UI experiments and crafts built with Next.js and GSAP, showcasing innovative designs and animations.",
+  keywords: [
+    "crafts",
+    "UI experiments",
+    "Next.js crafts",
+    "GSAP animations",
+    "interactive UI design",
+  ],
+
+  openGraph: {
+    title: "Crafts — Next.js & GSAP UI Experiments",
+    description:
+      "Explore a variety of interactive UI experiments and crafts built using Next.js and GSAP.",
+    url: "https://malaypatel.com/crafts",
+    siteName: "Malay Patel Portfolio",
+    images: [
+      {
+        url: "/og/crafts-overview.png",
+        width: 1200,
+        height: 630,
+        alt: "Crafts by Malay Patel",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Crafts — Next.js & GSAP UI Experiments",
+    description:
+      "A showcase of interactive UI experiments and crafts built with Next.js and GSAP.",
+    images: ["/og/crafts-overview.png"],
+  },
+};  
 
 // Define crafts configuration
 const crafts = [
