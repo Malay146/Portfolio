@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --font-inter: var(--font-inter);
   --font-pixelify: var(--font-pixelify);
   --font-roboto-mono: var(--font-roboto-mono);
   --font-roboto-condensed: var(--font-roboto-condensed);
    --font-doto: var(--font-doto); 
+}
+
+body {
+  @apply bg-black text-white ;
 }
 
 /* Hide scrollbar but keep scroll */
