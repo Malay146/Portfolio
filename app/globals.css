@@ -5,7 +5,7 @@
   --font-pixelify: var(--font-pixelify);
   --font-roboto-mono: var(--font-roboto-mono);
   --font-roboto-condensed: var(--font-roboto-condensed);
-   --font-doto: var(--font-doto); 
+  --font-doto: var(--font-doto); 
 }
 
 body {

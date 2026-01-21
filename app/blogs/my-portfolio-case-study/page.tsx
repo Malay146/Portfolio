@@ -1,3 +1,4 @@
+"use client";
 import FramerMotionIcon from "@/components/Icons/FramerMotionIcon";
 import GithubTechIcon from "@/components/Icons/GithubTechIcon";
 import GSAPIcon from "@/components/Icons/GSAPIcon";
