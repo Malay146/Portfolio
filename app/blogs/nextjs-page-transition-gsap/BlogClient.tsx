@@ -9,8 +9,7 @@ import VideoOverlay from "@/components/VideoOverlay";
 const page = () => {
   return (
     <div className="w-full border-x border-white flex flex-col lg:border-x-0">
-       <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
-        {/* Blog Title */}
+      <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
        
         <StripGridHorizontal className="h-10 md:h-12" />
 
@@ -418,10 +417,10 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
 
 export const spanTag = ({
   className,
