@@ -118,7 +118,7 @@ const Crafts = () => {
   return (
     <div
       className={cn(
-        "w-full border-x border-white flex flex-col lg:border-x-0 relative overflow-hidden h-260",
+        "w-full flex flex-col lg:border-x-0 relative overflow-hidden h-260",
       )}
     >
       <div className="w-full h-40 bg-linear-to-t from-black via-black/50 to-transparent absolute -bottom-2 z-50" />
