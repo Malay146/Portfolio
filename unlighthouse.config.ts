@@ -8,7 +8,7 @@ export default {
 
     routes: [
       '/', // start from the homepage
-      'crafts',
+      '/crafts',
       '/blogs',
       '/blogs/nextjs-page-transition-gsap',
       '/blogs/my-portfolio-case-study'

@@ -85,11 +85,6 @@ const crafts = [
     date: "9.1.2026",
   },
   {
-    title: "Random Layout",
-    component: <RandomLayout />,
-    date: "9.1.2026",
-  },
-  {
     title: "Changeable Tabs",
     component: <ChangeableTabs />,
     date: "9.1.2026",
@@ -102,6 +97,11 @@ const crafts = [
   {
     title: "Incrementor",
     component: <Incrementor />,
+    date: "9.1.2026",
+  },
+  {
+    title: "Random Layout",
+    component: <RandomLayout />,
     date: "9.1.2026",
   },
 ];

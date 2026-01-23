@@ -32,7 +32,7 @@ const InfiniteMenu = () => {
   return (
     <div
       ref={ref}
-      className="w-90 h-55 bg-zinc-950 border border-zinc-800 rounded-lg p-4 relative z-10 shadow-lg m-4 md:scale-100 scale-90"
+      className="w-90 h-55 bg-black border border-zinc-800 rounded-lg p-4 relative z-10 shadow-lg m-4 md:scale-100 scale-90"
     >
       <span className="absolute top-0 left-1/2 -translate-x-1/2 w-50 h-1 bg-linear-to-r from-transparent via-red-500 to-transparent blur-[3px]" />
       <span className="absolute top-0 left-1/2 -translate-x-1/2 w-50 h-1 bg-linear-to-r from-transparent via-red-500/50 to-transparent blur-sm" />

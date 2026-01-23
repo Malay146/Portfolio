@@ -19,7 +19,7 @@ const Footer = () => {
           MALAY
         </h1>
         {/* <FooterTitle /> */}
-        <div className="font-roboto-mono flex flex-col text-center gap-2 text-sm md:text-base tracking-tight mt-5 md:mt-10">
+        <div className="font-roboto-mono flex flex-col text-center gap-2 text-sm md:text-base tracking-tight mt-5 mb-15">
           <p className="text-white/80 font-light text-[10px] md:text-[16px]">
             Crafted at 2AM by{" "}
             <Link href="https://x.com/pmalay694" className="inline-block text-white font-bold hover:underline" target="_blank" rel="noopener noreferrer">

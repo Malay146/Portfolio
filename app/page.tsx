@@ -9,6 +9,7 @@ import Projects from "@/components/Projects";
 import StripGridHorizontal from "@/components/StripGridHorizontal";
 import StripGridVertical from "@/components/StripGridVertical";
 import TechnologyStack from "@/components/TechnologyStack";
+import Crafts from "@/components/crafts";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <Experience />
       <StripGridHorizontal className="h-6 md:h-8" />
       <Projects />
+      <StripGridHorizontal className="h-6 md:h-8" />
+      <Crafts />
       <StripGridHorizontal className="h-6 md:h-8" />
       <TechnologyStack />
       <StripGridHorizontal className="h-6 md:h-8" />
