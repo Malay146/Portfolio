@@ -18,6 +18,7 @@ import { cn } from "@/lib/cn";
 import { useState } from "react";
 import TransitionLink from "./Transition/TransitionLink";
 import { useHoverSound } from "@/hooks/useHoverSound";
+import CardMenu from "./crafts/card-menu";
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -59,6 +60,11 @@ export const metadata: Metadata = {
 
 // Define crafts configuration
 const crafts = [
+  // {
+  //   title: "Card Menu",
+  //   component: <CardMenu />,
+  //   date: "24.1.2026",
+  // },
   {
     title: "Purchase Sequence",
     component: <PurchaseButton />, // Placeholder for the actual Purchase Sequence component
@@ -163,11 +169,11 @@ const Crafts = () => {
                 </div>
 
                 <div className="text-white flex flex-col justify-center items-center px-4 md:px-16 border-y border-dashed border-white/30">
-                  <div className="w-full ">
+                  {/* <div className="w-full ">
                     <p className="font-roboto-mono tracking-tighter text-[10px] md:text-[12px] px-2 py-1 cursor-default text-zinc-400">
                       {craft.date}
                     </p>
-                  </div>
+                  </div> */}
                   {craft.component}
                 </div>
 

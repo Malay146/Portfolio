@@ -13,6 +13,7 @@ import InfiniteMenu from "@/components/crafts/infinite-menu";
 import GradientText from "@/components/crafts/gradient-text";
 import PurchaseButton from "@/components/crafts/purchase-sequence";
 import type { Metadata } from "next";
+import CardMenu from "@/components/crafts/card-menu";
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -54,6 +55,11 @@ export const metadata: Metadata = {
 
 // Define crafts configuration
 const crafts = [
+  {
+    title: "Card Menu",
+    component: <CardMenu />,
+    date: "24.1.2026",
+  },
   {
     title: "Purchase Sequence",
     component: <PurchaseButton />, // Placeholder for the actual Purchase Sequence component
