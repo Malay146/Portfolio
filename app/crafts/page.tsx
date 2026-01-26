@@ -14,6 +14,7 @@ import GradientText from "@/components/crafts/gradient-text";
 import PurchaseButton from "@/components/crafts/purchase-sequence";
 import type { Metadata } from "next";
 import CardMenu from "@/components/crafts/card-menu";
+import DottedBackground from "@/components/crafts/dotted-background";
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -55,6 +56,11 @@ export const metadata: Metadata = {
 
 // Define crafts configuration
 const crafts = [
+  {
+    title: "Dotted Background",
+    component: <DottedBackground />,
+    date: "26.1.2026",
+  },
   {
     title: "Card Menu",
     component: <CardMenu />,

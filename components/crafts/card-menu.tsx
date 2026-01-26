@@ -56,21 +56,21 @@ const CardMenu = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.1,
         staggerChildren: 0.05,
-        easeIn: easeIn,
+        ease: easeIn,
       },
     },
     exit: {
       opacity: 0,
-      transition: { duration: 0.1, easeIn: easeOut },
+      transition: { duration: 0.1, ease: easeOut },
     },
   };
 
   const item = {
-    hidden: { opacity: 0, x: 40, filter: "blur(4px)" },
+    hidden: { opacity: 0, x: 30, filter: "blur(2px)" },
     show: { opacity: 1, x: 0, filter: "blur(0px)" },
-    exit: { opacity: 0, x: -40, filter: "blur(4px)" },
+    exit: { opacity: 0, x: -30, filter: "blur(2px)" },
   };
   return (
     <div className="flex flex-col gap-3 size-75 justify-end items-center text-black p-4">

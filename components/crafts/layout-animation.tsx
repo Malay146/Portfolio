@@ -1,8 +1,6 @@
 "use client";
-import Link from "next/link";
 import { motion, AnimatePresence, Transition } from "motion/react";
 import { useState, useEffect } from "react";
-import { cn } from "@/lib/cn";
 import SpringArrow from "../ui_components/SpringArrow";
 
 interface ContentItem {
@@ -19,6 +17,8 @@ const spring: Transition = {
   mass: 0.6,
   restDelta: 0.001,
   restSpeed: 0.001,
+  duration: 0.6,
+  ease: [0.25, 0.1, 0.25, 1],
 };
 
 const content: ContentItem[] = [
@@ -30,30 +30,6 @@ const content: ContentItem[] = [
     description:
       "Tailwind CSS is a utility-first CSS framework that lets you build modern, responsive UIs directly in your HTML or JSX using small, composable classes—without writing custom CSS.",
   },
-  // {
-  //   id: 2,
-  //   imgUrl:
-  //     "https://res.cloudinary.com/ddbpvv06y/image/upload/v1764147017/shadcn_et4nfj.png",
-  //   title: "Shadcn UI",
-  //   description:
-  //     "Shadcn UI is a component library built on top of Tailwind CSS that provides a set of pre-designed, accessible, and customizable UI components to help you build beautiful web applications faster.",
-  // },
-  // {
-  //   id: 3,
-  //   imgUrl:
-  //     "https://res.cloudinary.com/ddbpvv06y/image/upload/v1764146998/motion_cq7hha.png",
-  //   title: "Framer Motion",
-  //   description:
-  //     "Framer Motion is a production-ready motion library for React that makes it easy to create fluid animations and gestures with a simple, declarative API.",
-  // },
-  // {
-  //   id: 4,
-  //   imgUrl:
-  //     "https://res.cloudinary.com/ddbpvv06y/image/upload/v1764146998/nextjs_sb8ldz.png",
-  //   title: "Next.js",
-  //   description:
-  //     "Next.js is a React framework that enables server-side rendering, static site generation, and powerful features like file-based routing and API routes for building full-stack web applications.",
-  // },
 ];
 
 export default function Page() {
@@ -96,7 +72,7 @@ export default function Page() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         {open === null &&
           content.map((item, index) => (
             <motion.div
@@ -105,15 +81,15 @@ export default function Page() {
               transition={spring}
               onClick={() => setOpen(index)}
               className="w-80 bg-zinc-800 rounded-2xl border border-zinc-700 cursor-pointer overflow-hidden z-70 hover:border-zinc-500 transition-colors"
-              // whileHover={{ scale: 1.03 }}
-              // whileTap={{ scale: 0.98 }}
               style={{ willChange: "transform" }}
             >
               <motion.div
                 layoutId={`image-${index}`}
+                transition={spring}
                 className="relative aspect-video w-full bg-black"
               >
-                <img
+                <motion.img
+                  transition={spring}
                   src={item.imgUrl}
                   alt={item.title}
                   className="w-full h-full object-cover"
@@ -127,13 +103,15 @@ export default function Page() {
             key="expanded"
             layoutId={`card-${open}`}
             transition={spring}
-            className="w-120 max-w-2xl bg-zinc-800 rounded-2xl border border-zinc-700 overflow-hidden z-70 relative"
+            className="w-120 max-w-2xl bg-zinc-800 rounded-4xl border border-zinc-700 overflow-hidden z-70 relative"
           >
             <motion.div
               layoutId={`image-${open}`}
+              transition={spring}
               className="relative aspect-video w-full"
             >
-              <img
+              <motion.img
+                transition={spring}
                 src={content[open].imgUrl}
                 alt={content[open].title}
                 className="w-full h-full object-cover"
