@@ -42,7 +42,7 @@ export default function Page() {
             {active === tab && (
               <motion.div
                 layoutId="hover-indicator"
-                className="absolute inset-x-0.5 inset-y-0.5 sm:inset-x-1 sm:inset-y-1 md:inset-x-1.5 md:inset-y-1 lg:inset-x-2 lg:inset-y-1.5 xl:inset-x-2.5 xl:inset-y-2 rounded sm:rounded-md bg-zinc-700 z-0"
+                className="absolute inset-x-0.5 inset-y-0.5 sm:inset-x-1 sm:inset-y-1 md:inset-x-1.5 md:inset-y-1 lg:inset-x-2 lg:inset-y-1 xl:inset-x-2.5 xl:inset-y-1 rounded sm:rounded-md bg-zinc-700 z-0"
                 transition={{
                   type: "spring",
                   stiffness: 500,

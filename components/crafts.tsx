@@ -20,6 +20,7 @@ import TransitionLink from "./Transition/TransitionLink";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import CardMenu from "./crafts/card-menu";
 import MeteorCard from "./crafts/comet-meteor";
+import LazyCraft from "./LazyCraft";
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -81,11 +82,11 @@ const crafts = [
     component: <SVGCard />,
     date: "9.1.2026",
   },
-  // {
-  //   title: "Comet Meteor Animation",
-  //   component: <MeteorCard />,
-  //   date: "28.1.2026",
-  // },
+  {
+    title: "Comet Meteor Animation",
+    component: <MeteorCard />,
+    date: "28.1.2026",
+  },
 ];
 
 const Crafts = () => {
@@ -145,7 +146,7 @@ const Crafts = () => {
                       {craft.date}
                     </p>
                   </div> */}
-                  {craft.component}
+                   <LazyCraft>{craft.component}</LazyCraft>
                 </div>
 
                 {index == crafts.length - 1 && (

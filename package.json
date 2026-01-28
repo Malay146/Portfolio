@@ -29,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.9.19",
     "tailwindcss": "^4",
     "typescript": "^5",
     "unlighthouse": "^0.17.4"

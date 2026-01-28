@@ -122,7 +122,7 @@ const Widgets = () => {
     return () => clearInterval(interval);
   }, []);
 
-  if (!track) return <div>Loading…</div>;
+  if (!track) return <div className="text-white h-24 flex items-center justify-center">Loading…</div>;
 
   const links = [
     {
@@ -140,7 +140,7 @@ const Widgets = () => {
   ];
 
   return (
-    <div className="w-full flex justify-between items-center space-x-3 text-white text-sm border-x border-b border-white lg:border-x-0 lg:border-white p-4">
+    <div className="w-full flex justify-between items-center space-x-3 text-white text-sm border-x border-white lg:border-x-0 lg:border-white p-4">
       {/* Time and Temp */}
       <div className="flex gap-4">
         <div className="Time flex flex-col">

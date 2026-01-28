@@ -34,7 +34,7 @@ const Page = () => {
   return (
     <div
     className="w-full flex items-center justify-center gap-4 relative p-2 sm:p-3 md:p-4">
-      <div className="absolute top-1/2 -translate-y-1/2 right-2 items-center justify-center gap-4 hidden md:flex">
+      <div className="absolute top-1/2 -translate-y-1/2 -right-35 items-center justify-center gap-4 hidden md:flex">
         <SpringArrow className="size-10 text-zinc-500 animate-bounce-slow rotate-270" />
         <p className="font-roboto-mono text-sm text-zinc-500 tracking-tight">Scroll Down</p>
       </div>

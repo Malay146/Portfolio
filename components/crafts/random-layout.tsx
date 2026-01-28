@@ -38,7 +38,7 @@ const LayoutGrid = () => {
   return (
     <div 
     className="w-full flex items-center justify-center p-4 scale-68 sm:scale-90 md:scale-100">
-       <div className="absolute top-1/2 -translate-y-1/2 right-4 hidden md:flex items-center justify-center gap-4">
+       <div className="absolute top-1/2 -translate-y-1/2 -right-25 hidden md:flex items-center justify-center gap-4">
         <SpringArrow className="size-10 text-zinc-500 animate-bounce-slow rotate-270" />
         <p className="font-roboto-mono text-sm text-zinc-500 tracking-tight">Hover</p>
       </div>

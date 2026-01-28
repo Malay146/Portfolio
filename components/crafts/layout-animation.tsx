@@ -53,7 +53,7 @@ export default function Page() {
     <div
       className="w-full flex items-center justify-center gap-4 relative p-4"
     >
-      <div className="absolute top-1/2 -translate-y-1/2 right-15 hidden md:flex items-center justify-center gap-4">
+      <div className="absolute top-1/2 -translate-y-1/2 -right-35 hidden md:flex items-center justify-center gap-4">
         <SpringArrow className="size-10 text-zinc-500 animate-bounce-slow rotate-270" />
         <p className="font-roboto-mono text-sm text-zinc-500 tracking-tight">Tap on it</p>
       </div>

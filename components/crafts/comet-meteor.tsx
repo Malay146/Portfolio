@@ -8,10 +8,10 @@ import { useEffect, useRef } from "react";
    Configuration
 -------------------------------*/
 const METEOR_CONFIG = {
-  count: 150,
+  count: 120,
   speed: {
     min: 0.0006,
-    max: 0.0016,
+    max: 0.0012,
   },
   length: {
     min: 20,
@@ -80,17 +80,16 @@ const useMeteorAnimation = (
     const DPR = window.devicePixelRatio || 1;
     const size: CanvasSize = { width: 0, height: 0 };
     const meteors: Meteor[] = [];
+    let rafId: number | null = null;
+    let isVisible = true;
 
     /* Resize Handler */
     const handleResize = () => {
       const rect = canvas.getBoundingClientRect();
-
       size.width = rect.width;
       size.height = rect.height;
-
       canvas.width = size.width * DPR;
       canvas.height = size.height * DPR;
-
       ctx.resetTransform();
       ctx.scale(DPR, DPR);
     };
@@ -116,12 +115,10 @@ const useMeteorAnimation = (
       const t = easeOutQuint(meteor.progress);
       const dx = size.width * METEOR_CONFIG.travelDistance * t;
       const dy = size.height * METEOR_CONFIG.travelDistance * t;
-
       const startX = meteor.x + dx;
       const startY = meteor.y + dy;
       const endX = startX - meteor.length;
       const endY = startY - meteor.length;
-
       const gradient = ctx.createLinearGradient(startX, startY, endX, endY);
       gradient.addColorStop(0, `rgba(255, 255, 255, ${meteor.opacity})`);
       gradient.addColorStop(
@@ -129,30 +126,24 @@ const useMeteorAnimation = (
         `rgba(200, 220, 255, ${meteor.opacity * 0.7})`,
       );
       gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
       ctx.strokeStyle = gradient;
       ctx.lineWidth = 1.6;
       ctx.shadowBlur = METEOR_CONFIG.glow;
       ctx.shadowColor = "rgba(180, 210, 255, 0.7)";
-
       ctx.beginPath();
       ctx.moveTo(startX, startY);
       ctx.lineTo(endX, endY);
       ctx.stroke();
-
       ctx.shadowBlur = 0;
     };
 
     /* Animation Loop */
     const animate = () => {
-      // Fade background
+      if (!isVisible) return;
       ctx.fillStyle = `rgba(0, 0, 0, ${METEOR_CONFIG.trail})`;
       ctx.fillRect(0, 0, size.width, size.height);
-
-      // Update and draw meteors
       meteors.forEach((meteor) => {
         meteor.progress += meteor.speed;
-
         if (meteor.progress >= 1) {
           Object.assign(meteor, createMeteor());
           meteor.progress = 0;
@@ -160,22 +151,40 @@ const useMeteorAnimation = (
           drawMeteor(meteor);
         }
       });
-
-      requestAnimationFrame(animate);
+      rafId = requestAnimationFrame(animate);
     };
+
+    /* IntersectionObserver to pause/resume animation */
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          if (rafId === null) animate();
+        } else {
+          if (rafId !== null) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          }
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(canvas);
 
     /* Initialize */
     handleResize();
     window.addEventListener("resize", handleResize);
-
     for (let i = 0; i < METEOR_CONFIG.count; i++) {
       meteors.push(createMeteor());
     }
-
     animate();
 
     /* Cleanup */
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      observer.disconnect();
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [canvasRef]);
 };
 
@@ -188,8 +197,8 @@ export default function MeteorCard() {
   useMeteorAnimation(canvasRef);
 
   return (
-    <div className="flex flex-col border border-zinc-300 dark:border-zinc-700 bg-neutral-900 text-white rounded-3xl p-2 m-4 scale-80 sm:scale-90 md:scale-100 shadow-2xl">
-      <div className="relative size-100 rounded-3xl overflow-hidden border border-zinc-800 bg-black shadow-2xl">
+    <div className="flex flex-col border border-zinc-300 dark:border-zinc-700 bg-neutral-900 text-white rounded-3xl p-2 m-4 shadow-2xl">
+      <div className="relative size-80 md:size-100 rounded-3xl overflow-hidden border border-zinc-800 bg-black shadow-2xl">
         {/* Glass Effect */}
         <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent pointer-events-none" />
 
@@ -201,13 +210,13 @@ export default function MeteorCard() {
       </div>
 
       <div className="p-4">
-        <h1 className="text-3xl font-mono font-bold tracking-tight">
+        <h1 className="text-2xl md:text-3xl font-mono font-bold tracking-tight">
           Comet Meteor
         </h1>
-        <p className="w-80 font-geist text-zinc-600 dark:text-zinc-400 mt-2">
+        <p className="w-70 md:w-80 text-sm md:text-md font-geist text-zinc-600 dark:text-zinc-400 mt-2">
           A smooth animated background with subtle trail and modern motion.
         </p>
-        <button className="font-mono text-xl w-full bg-zinc-100 text-black py-3 rounded-2xl mt-4 tracking-tight cursor-pointer">
+        <button className="font-mono text-lg md:text-xl w-full bg-zinc-100 text-black py-2 md:py-3 rounded-2xl mt-4 tracking-tight cursor-pointer">
           Get Started
         </button>
       </div>

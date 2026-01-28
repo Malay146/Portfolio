@@ -16,13 +16,18 @@ import type { Metadata } from "next";
 import CardMenu from "@/components/crafts/card-menu";
 // import DottedBackground from "@/components/crafts/dotted-background";
 import VercelFilter from "@/components/crafts/vercel-filter";
-import MeteorCard from "@/components/crafts/comet-meteor";
+// import MeteorCard from "@/components/crafts/comet-meteor";
 import dynamic from "next/dynamic";
+import LazyCraft from "@/components/LazyCraft";
 
 const DottedBackground = dynamic(
   () => import("@/components/crafts/dotted-background"),
-  { ssr: true }
+  { ssr: true },
 );
+
+const MeteorCard = dynamic(() => import("@/components/crafts/comet-meteor"), {
+  ssr: true,
+});
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -60,76 +65,91 @@ export const metadata: Metadata = {
       "A showcase of interactive UI experiments and crafts built with Next.js and GSAP.",
     images: ["/og/crafts-overview.png"],
   },
-};  
+};
 
 // Define crafts configuration
 const crafts = [
   {
+    id: "meteor",
     title: "Comet Meteor Animation",
     component: <MeteorCard />,
     date: "28.1.2026",
   },
   {
+    id: "vercel",
     title: "Vercel Style Filter Menu",
     component: <VercelFilter />,
     date: "28.1.2026",
   },
+
   {
+    id: "dots",
     title: "Dotted Background",
     component: <DottedBackground />,
-    date: "26.1.2026",
-  },
-  {
-    title: "Card Menu",
-    component: <CardMenu />,
     date: "24.1.2026",
   },
   {
+    id: "purchase",
     title: "Purchase Sequence",
-    component: <PurchaseButton />, // Placeholder for the actual Purchase Sequence component
+    component: <PurchaseButton />,
     date: "20.1.2026",
   },
   {
+    id: "gradient",
     title: "Gradient Text",
     component: <GradientText />,
     date: "20.1.2026",
   },
   {
+    id: "infinite",
     title: "Infinite Menu",
     component: <InfiniteMenu />,
     date: "20.1.2026",
   },
   {
+    id: "card-menu",
+    title: "Card Menu",
+    component: <CardMenu />,
+    date: "26.1.2026",
+  },
+  {
+    id: "layout",
     title: "Layout Animation",
     component: <LayoutAnimation />,
     date: "9.1.2026",
   },
   {
+    id: "blur",
     title: "Progressive Blur",
     component: <ProgressiveBlur />,
     date: "9.1.2026",
   },
   {
+    id: "svg",
     title: "SVG Card",
     component: <SVGCard />,
     date: "9.1.2026",
   },
   {
+    id: "tabs",
     title: "Changeable Tabs",
     component: <ChangeableTabs />,
     date: "9.1.2026",
   },
   {
+    id: "gooey",
     title: "Gooey Menu",
     component: <GooeyMenu />,
     date: "9.1.2026",
   },
   {
+    id: "inc",
     title: "Incrementor",
     component: <Incrementor />,
     date: "9.1.2026",
   },
   {
+    id: "random",
     title: "Random Layout",
     component: <RandomLayout />,
     date: "9.1.2026",
@@ -173,7 +193,7 @@ const page = () => {
                   {craft.date}
                 </p>
               </div>
-              {craft.component}
+              <LazyCraft>{craft.component}</LazyCraft>
             </div>
 
             {index !== crafts.length - 1 && (
