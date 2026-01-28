@@ -188,7 +188,7 @@ export default function MeteorCard() {
   useMeteorAnimation(canvasRef);
 
   return (
-    <div className="flex flex-col border border-zinc-300 dark:border-zinc-700 bg-neutral-900 text-white rounded-3xl p-2 m-4">
+    <div className="flex flex-col border border-zinc-300 dark:border-zinc-700 bg-neutral-900 text-white rounded-3xl p-2 m-4 scale-80 sm:scale-90 md:scale-100 shadow-2xl">
       <div className="relative size-100 rounded-3xl overflow-hidden border border-zinc-800 bg-black shadow-2xl">
         {/* Glass Effect */}
         <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent pointer-events-none" />

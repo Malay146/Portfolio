@@ -14,10 +14,15 @@ import GradientText from "@/components/crafts/gradient-text";
 import PurchaseButton from "@/components/crafts/purchase-sequence";
 import type { Metadata } from "next";
 import CardMenu from "@/components/crafts/card-menu";
-import DottedBackground from "@/components/crafts/dotted-background";
+// import DottedBackground from "@/components/crafts/dotted-background";
 import VercelFilter from "@/components/crafts/vercel-filter";
-import { title } from "process";
 import MeteorCard from "@/components/crafts/comet-meteor";
+import dynamic from "next/dynamic";
+
+const DottedBackground = dynamic(
+  () => import("@/components/crafts/dotted-background"),
+  { ssr: true }
+);
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -147,7 +152,7 @@ const page = () => {
 
         {/* Render crafts dynamically */}
         {crafts.map((craft, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={craft.title}>
             <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
               <h2 className="font-roboto-mono font-bold tracking-tighter text-[14px] md:text-[20px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
                 {craft.title}

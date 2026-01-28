@@ -19,6 +19,7 @@ import { useState } from "react";
 import TransitionLink from "./Transition/TransitionLink";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import CardMenu from "./crafts/card-menu";
+import MeteorCard from "./crafts/comet-meteor";
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -60,11 +61,6 @@ export const metadata: Metadata = {
 
 // Define crafts configuration
 const crafts = [
-  // {
-  //   title: "Card Menu",
-  //   component: <CardMenu />,
-  //   date: "24.1.2026",
-  // },
   {
     title: "Purchase Sequence",
     component: <PurchaseButton />, // Placeholder for the actual Purchase Sequence component
@@ -76,45 +72,20 @@ const crafts = [
     date: "20.1.2026",
   },
   {
-    title: "Infinite Menu",
-    component: <InfiniteMenu />,
-    date: "20.1.2026",
+    title: "Gooey Menu",
+    component: <GooeyMenu />,
+    date: "9.1.2026",
   },
   {
     title: "SVG Card",
     component: <SVGCard />,
     date: "9.1.2026",
   },
-  {
-    title: "Layout Animation",
-    component: <LayoutAnimation />,
-    date: "9.1.2026",
-  },
-  {
-    title: "Progressive Blur",
-    component: <ProgressiveBlur />,
-    date: "9.1.2026",
-  },
-  {
-    title: "Random Layout",
-    component: <RandomLayout />,
-    date: "9.1.2026",
-  },
-  {
-    title: "Changeable Tabs",
-    component: <ChangeableTabs />,
-    date: "9.1.2026",
-  },
-  {
-    title: "Gooey Menu",
-    component: <GooeyMenu />,
-    date: "9.1.2026",
-  },
-  {
-    title: "Incrementor",
-    component: <Incrementor />,
-    date: "9.1.2026",
-  },
+  // {
+  //   title: "Comet Meteor Animation",
+  //   component: <MeteorCard />,
+  //   date: "28.1.2026",
+  // },
 ];
 
 const Crafts = () => {
@@ -124,7 +95,7 @@ const Crafts = () => {
   return (
     <div
       className={cn(
-        "w-full flex flex-col lg:border-x-0 relative overflow-hidden h-260",
+        "w-full flex flex-col lg:border-x-0 relative overflow-hidden max-h-360",
       )}
     >
       <div className="w-full h-40 bg-linear-to-t from-black via-black/50 to-transparent absolute -bottom-2 z-50" />
