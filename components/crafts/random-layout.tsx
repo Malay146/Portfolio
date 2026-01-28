@@ -2,7 +2,15 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/cn";
-import { File, Funnel, PlusIcon, SearchIcon, Sun, Moon, SunIcon } from "lucide-react";
+import {
+  File,
+  Funnel,
+  PlusIcon,
+  SearchIcon,
+  Sun,
+  Moon,
+  SunIcon,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import MoonIcon from "../Icons/MoonIcon";
 import SpringArrow from "../ui_components/SpringArrow";
@@ -13,16 +21,16 @@ const LayoutGrid = () => {
 
   const handleTap = () => {
     setIsHovered(true);
-    
+
     // Clear any existing timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    
+
     // Set timeout to reset after 3 seconds
     timeoutRef.current = setTimeout(() => {
       setIsHovered(false);
-    }, 1500);
+    }, 2000);
   };
 
   React.useEffect(() => {
@@ -34,13 +42,13 @@ const LayoutGrid = () => {
     };
   }, []);
 
-
   return (
-    <div 
-    className="w-full flex items-center justify-center p-4 scale-68 sm:scale-90 md:scale-100">
-       <div className="absolute top-1/2 -translate-y-1/2 -right-25 hidden md:flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center p-4 scale-68 sm:scale-90 md:scale-100">
+      <div className="absolute top-1/2 -translate-y-1/2 -right-25 hidden md:flex items-center justify-center gap-4">
         <SpringArrow className="size-10 text-zinc-500 animate-bounce-slow rotate-270" />
-        <p className="font-roboto-mono text-sm text-zinc-500 tracking-tight">Hover</p>
+        <p className="font-roboto-mono text-sm text-zinc-500 tracking-tight">
+          Hover
+        </p>
       </div>
       {/* Back button */}
       <div
@@ -49,11 +57,12 @@ const LayoutGrid = () => {
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleTap}
       >
-        
-        <div className={cn(
-          "flex flex-col gap-6 transition-all duration-300",
-          !isHovered && "blur-xs"
-        )}>
+        <div
+          className={cn(
+            "flex flex-col gap-6 transition-all duration-300",
+            !isHovered && "blur-xs",
+          )}
+        >
           {/* Row 1 */}
           <Row>
             <AnimatedItem
@@ -237,32 +246,32 @@ const AnimatedItem = ({
         damping: 25,
         mass: 0.8,
         delay: isHovered ? delay : 0,
-        x: { 
+        x: {
           type: "spring",
           stiffness: 350,
           damping: 28,
-          mass: 0.7
+          mass: 0.7,
         },
-        y: { 
+        y: {
           type: "spring",
           stiffness: 350,
           damping: 28,
-          mass: 0.7
+          mass: 0.7,
         },
         rotate: {
           type: "spring",
           stiffness: 280,
           damping: 22,
-          mass: 0.6
+          mass: 0.6,
         },
         scale: {
           duration: 0.4,
-          ease: [0.34, 1.56, 0.64, 1]
+          ease: [0.34, 1.56, 0.64, 1],
         },
         opacity: {
           duration: 0.3,
-          ease: [0.25, 0.1, 0.25, 1]
-        }
+          ease: [0.25, 0.1, 0.25, 1],
+        },
       }}
     >
       {children}
@@ -281,7 +290,7 @@ const Row = ({
     <div
       className={cn(
         "flex items-center justify-center gap-2",
-        center && "relative"
+        center && "relative",
       )}
     >
       {children}
@@ -327,13 +336,13 @@ const Toggle = () => {
       onClick={() => setIsOn(!isOn)}
       className={cn(
         "w-10 h-5 rounded-full flex items-center px-0.5 transition-colors duration-200 cursor-pointer",
-        isOn ? "bg-zinc-300" : "bg-zinc-700"
+        isOn ? "bg-zinc-300" : "bg-zinc-700",
       )}
     >
       <div
         className={cn(
           "w-4 h-4 rounded-full bg-white shadow transition-transform duration-200",
-          isOn && "translate-x-5"
+          isOn && "translate-x-5",
         )}
       />
     </button>
@@ -361,41 +370,45 @@ const Theme = () => {
       onClick={() => setIsDark(!isDark)}
       className={cn(
         "size-10 rounded-lg flex items-center justify-center cursor-pointer transition-colors duration-200",
-        isDark ? "bg-zinc-800 text-zinc-400" : "bg-zinc-100 text-zinc-600"
+        isDark ? "bg-zinc-800 text-zinc-400" : "bg-zinc-100 text-zinc-600",
       )}
     >
-      {isDark ? <SunIcon className="size-5" /> : <MoonIcon className="size-5" />}
+      {isDark ? (
+        <SunIcon className="size-5" />
+      ) : (
+        <MoonIcon className="size-5" />
+      )}
     </button>
   );
 };
 
 const Slider = () => {
-    const [value, setValue] = React.useState(66);
+  const [value, setValue] = React.useState(66);
 
-    return (
-        <div className="flex flex-col items-center gap-1">
-            <div className="relative w-20 h-3 rounded-full bg-zinc-700 cursor-pointer">
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={value}
-                    onChange={(e) => setValue(Number(e.target.value))}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
-                />
-                <div
-                    className="h-full bg-zinc-300 rounded-full transition-all duration-100"
-                    style={{ width: `${value}%` }}
-                />
-                <span
-                    className="absolute -top-6 text-xs text-zinc-400 font-medium transition-all duration-100"
-                    style={{ left: `calc(${value}% - 8px)` }}
-                >
-                    {value}
-                </span>
-            </div>
-        </div>
-    );
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <div className="relative w-20 h-3 rounded-full bg-zinc-700 cursor-pointer">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={value}
+          onChange={(e) => setValue(Number(e.target.value))}
+          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+        />
+        <div
+          className="h-full bg-zinc-300 rounded-full transition-all duration-100"
+          style={{ width: `${value}%` }}
+        />
+        <span
+          className="absolute -top-6 text-xs text-zinc-400 font-medium transition-all duration-100"
+          style={{ left: `calc(${value}% - 8px)` }}
+        >
+          {value}
+        </span>
+      </div>
+    </div>
+  );
 };
 
 const IconButton = () => (
@@ -456,7 +469,7 @@ const Tooltip = ({
           "group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0",
           "group-focus-visible:opacity-100 group-focus-visible:scale-100 group-focus-visible:translate-y-0",
           "transition-all duration-200 ease-out",
-          className
+          className,
         )}
       >
         <span className="relative block px-3 py-1.5 rounded-md bg-zinc-950 border border-zinc-700 text-white text-xs font-medium whitespace-nowrap shadow-lg">
@@ -466,7 +479,7 @@ const Tooltip = ({
           <span
             className={cn(
               "absolute w-0 h-0 border-4 border-transparent",
-              arrowStyles[side]
+              arrowStyles[side],
             )}
           />
         </span>
@@ -480,7 +493,7 @@ const FileUpload = ({ className }: { className?: string }) => {
     <div
       className={cn(
         "relative px-3 py-2 rounded-sm bg-zinc-100 border border-dashed border-zinc-300 cursor-pointer hover:border-zinc-400 transition-colors",
-        className
+        className,
       )}
     >
       <div className="flex items-center gap-2">
@@ -497,9 +510,7 @@ const Loader = () => {
   return (
     <div className="flex items-center gap-2 bg-zinc-100 px-3 py-1.5 rounded-lg border border-zinc-200">
       <div className="size-4 border-2 border-zinc-300 border-t-zinc-600 rounded-full animate-spin" />
-      <span className="text-xs text-zinc-600 font-medium">
-        Loading...
-      </span>
+      <span className="text-xs text-zinc-600 font-medium">Loading...</span>
     </div>
   );
 };

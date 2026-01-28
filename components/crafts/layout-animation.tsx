@@ -103,7 +103,7 @@ export default function Page() {
             key="expanded"
             layoutId={`card-${open}`}
             transition={spring}
-            className="w-120 max-w-2xl bg-zinc-800 rounded-4xl border border-zinc-700 overflow-hidden z-70 relative"
+            className="w-80 md:w-120 max-w-2xl bg-zinc-800 rounded-4xl border border-zinc-700 overflow-hidden z-70 relative"
           >
             <motion.div
               layoutId={`image-${open}`}
@@ -128,11 +128,11 @@ export default function Page() {
                 delay: 0.1,
               }}
             >
-              <motion.h1 className="text-2xl font-bold text-zinc-100">
+              <motion.h1 className="text-xl md:text-2xl font-bold text-zinc-100">
                 {content[open].title}
               </motion.h1>
 
-              <motion.p className="text-base text-zinc-300 leading-relaxed">
+              <motion.p className="text-sm md:text-base text-zinc-300 leading-relaxed">
                 {content[open].description}
               </motion.p>
             </motion.div>

@@ -215,16 +215,16 @@ const DottedBackground = () => {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full w-full text-center">
-          <div className="mx-auto mb-6 w-24 h-24 rounded-2xl bg-white flex items-center justify-center shadow-xl">
-            <VercelLogo className="size-18" />
+          <div className="mx-auto mb-6 size-16 md:size-24 rounded-2xl bg-white flex items-center justify-center shadow-xl">
+            <VercelLogo className="size-10 md:size-18" />
           </div>
 
           <div className="absolute bottom-0 flex items-center justify-between w-full bg-black px-4 py-3">
-            <p className="text-gray-400 text-sm tracking-wide">
+            <p className="text-gray-400 text-sm md:text-sm tracking-wide">
               The Triangle Company
             </p>
 
-            <div className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center bg-black cursor-pointer text-white">
+            <div className="size-8 md:size-10 rounded-full border border-zinc-700 flex items-center justify-center bg-black cursor-pointer text-white">
               →
             </div>
           </div>
