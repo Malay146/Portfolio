@@ -15,6 +15,9 @@ import PurchaseButton from "@/components/crafts/purchase-sequence";
 import type { Metadata } from "next";
 import CardMenu from "@/components/crafts/card-menu";
 import DottedBackground from "@/components/crafts/dotted-background";
+import VercelFilter from "@/components/crafts/vercel-filter";
+import { title } from "process";
+import MeteorCard from "@/components/crafts/comet-meteor";
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -56,6 +59,16 @@ export const metadata: Metadata = {
 
 // Define crafts configuration
 const crafts = [
+  {
+    title: "Comet Meteor Animation",
+    component: <MeteorCard />,
+    date: "28.1.2026",
+  },
+  {
+    title: "Vercel Style Filter Menu",
+    component: <VercelFilter />,
+    date: "28.1.2026",
+  },
   {
     title: "Dotted Background",
     component: <DottedBackground />,
