@@ -7,28 +7,28 @@ import { useEffect, useRef } from "react";
    Configuration
 -------------------------------*/
 const METEOR_CONFIG = {
-  count: 120,
+  count: 30,
   speed: {
-    min: 0.0006,
+    min: 0.0004,
     max: 0.0012,
   },
   length: {
-    min: 20,
-    max: 60,
+    min: 60,
+    max: 100,
   },
   trail: 0.15,
-  glow: 14,
+  glow: 18,
   opacity: {
     min: 0.3,
     max: 0.7,
   },
   // Spawn area as percentage of canvas (0-1)
   spawnArea: {
-    widthPercent: 1,
-    heightPercent: 0.7,
+    widthPercent: 0.8,
+    heightPercent: 0.6,
   },
   // Movement multiplier
-  travelDistance: 1.4,
+  travelDistance: 1.7,
 } as const;
 
 const CARD_CONFIG = {
@@ -205,7 +205,7 @@ export default function MeteorCard() {
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
         {/* Vignette */}
-        <div className="absolute inset-0 bg-radial from-transparent via-black/50 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-radial from-transparent via-black/30 to-black pointer-events-none" />
       </div>
 
       <div className="p-4">
