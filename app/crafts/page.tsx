@@ -19,6 +19,7 @@ import VercelFilter from "@/components/crafts/vercel-filter";
 // import MeteorCard from "@/components/crafts/comet-meteor";
 import dynamic from "next/dynamic";
 import LazyCraft from "@/components/LazyCraft";
+import AppleClock from "@/components/crafts/apple-clock";
 
 const DottedBackground = dynamic(
   () => import("@/components/crafts/dotted-background"),
@@ -69,6 +70,12 @@ export const metadata: Metadata = {
 
 // Define crafts configuration
 const crafts = [
+  {
+    id: "apple-clock",
+    title: "Apple Style Clock",
+    component: <AppleClock />,
+    date: "31.1.2026",
+  },
   {
     id: "meteor",
     title: "Comet Meteor Animation",
