@@ -5,16 +5,23 @@ import LinkedInIcons from "./Icons/LinkedInIcon";
 import TwitterIcon from "./Icons/TwitterIcon";
 import GithubIcon from "./Icons/GithubIcon";
 import MoonIcon from "./Icons/MoonIcon";
-import Image from "next/image";
 import SunIcon from "./Icons/SunIcon";
 import CloudIcon from "./Icons/CloudIcon";
 import RainIcon from "./Icons/RainIcon";
 import YoutubeMusicIcon from "./Icons/YoutubeMusicIcon";
 import PlayIcon from "./Icons/PlayIcon";
 import { usePathname } from "next/navigation";
-import TransitionLink from "./Transition/TransitionLink";
 
 const Widgets = () => {
+  // Dummy track data to show while loading
+  const dummyTrack = {
+    image: "/yt-dummy/bad-dreams.png", // Placeholder image
+    title: "Bad Dreams",
+    artist: "Teddy Swims",
+    url: "https://music.youtube.com/watch?v=BDq_I-4FY2U&list=RDAMVMBDq_I-4FY2U",
+    nowPlaying: false,
+  };
+
   const pathname = usePathname();
   const [dateStr, setDateStr] = useState<string>("");
   const [timeStr, setTimeStr] = useState<string>("");
@@ -65,7 +72,7 @@ const Widgets = () => {
     async function fetchWeather() {
       try {
         const res = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`,
         );
         const data = await res.json();
 
@@ -122,7 +129,6 @@ const Widgets = () => {
     return () => clearInterval(interval);
   }, []);
 
-  if (!track) return <div className="text-white h-20 md:h-24 flex items-center justify-center border-b border-white">Loading…</div>;
 
   const links = [
     {
@@ -143,7 +149,7 @@ const Widgets = () => {
     <div className="w-full flex justify-between items-center space-x-3 text-white text-sm border-x border-b border-white lg:border-x-0 lg:border-white p-4">
       {/* Time and Temp */}
       <div className="flex gap-4">
-        <div className="Time flex flex-col">
+        <div className="Time flex flex-col w-28">
           <div className="font-inter font-bold text-[10px] md:text-[14px]">
             {dateStr}
           </div>
@@ -151,52 +157,59 @@ const Widgets = () => {
             {timeStr}
           </div>
         </div>
-        <div className="Temp md:flex flex-col md:visible hidden">
+        <div className="Temp md:flex flex-col md:visible hidden w-14">
           <div className="font-inter font-bold text-[10px] md:text-[14px] gap-1 flex">
             {icon}
             {temp !== null ? `${temp}°C` : "--"}
           </div>
           <div className="font-roboto-condensed font-thin text-[18px] md:text-[24px] text-white/50 leading-none tracking-tighter">
-            {condition}
+            {condition !== "" ? condition : "N/A"}
           </div>
         </div>
       </div>
 
       {/* YT Music */}
       <div className="h-17 bg-zinc-900 rounded-2xl border border-white/30 md:flex gap-2 px-1 shadow-[inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.1)] md:visible hidden">
-        <div className="size-14 rounded-xl border border-white/30 relative overflow-hidden my-auto">
-          {track.image && (
-            <img
-              src={track.image}
-              alt={track.title}
-              className="object-cover w-full h-full"
-            />
-          )}
-        </div>
+        {(() => {
+          const t = track || dummyTrack;
+          return (
+            <>
+              <div className="size-14 rounded-xl border border-white/30 relative overflow-hidden my-auto">
+                {t.image && (
+                  <img
+                    src={t.image}
+                    alt={t.title}
+                    className="object-cover w-full h-full"
+                  />
+                )}
+              </div>
 
-        <div className="flex flex-col justify-center font-inter gap-3 mr-3">
-          <div className="flex items-center gap-1">
-            <YoutubeMusicIcon className="size-4 inline-block" />
-            <h1 className="leading-none text-[10px] text-white/50 tracking-tighter uppercase font-bold whitespace-nowrap">
-              {track.nowPlaying ? "Now playing" : "Last played"}
-            </h1>
-          </div>
+              <div className="flex flex-col justify-center font-inter gap-3 mr-3">
+                <div className="flex items-center gap-1">
+                  <YoutubeMusicIcon className="size-4 inline-block" />
+                  <h1 className="leading-none text-[10px] text-white/50 tracking-tighter uppercase font-bold whitespace-nowrap">
+                    {t.nowPlaying ? "Now playing" : "Last played"}
+                  </h1>
+                </div>
 
-          <div className="ml-1">
-            <h2 className="text-[12px] font-semibold leading-none tracking-tight truncate w-32 mb-0.5">
-              {track.title}
-            </h2>
-            <p className="text-[11px] text-white/50 font-light tracking-tight leading-none truncate w-32 mb-0.5">
-              {track.artist}
-            </p>
-          </div>
-        </div>
+                <div className="ml-1">
+                  <h2 className="text-[12px] font-semibold leading-none tracking-tight truncate w-32 mb-0.5">
+                    {t.title}
+                  </h2>
+                  <p className="text-[11px] text-white/50 font-light tracking-tight leading-none truncate w-32 mb-0.5">
+                    {t.artist}
+                  </p>
+                </div>
+              </div>
 
-        <div className="flex flex-1 items-center justify-center">
-          <Button href={track.url} className="p-1.5 hover:bg-zinc-900/10">
-            <PlayIcon className="size-5" />
-          </Button>
-        </div>
+              <div className="flex flex-1 items-center justify-center">
+                <Button href={t.url} className="p-1.5 hover:bg-zinc-900/10">
+                  <PlayIcon className="size-5" />
+                </Button>
+              </div>
+            </>
+          );
+        })()}
       </div>
 
       {/* Links */}

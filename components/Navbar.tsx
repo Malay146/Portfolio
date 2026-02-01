@@ -4,9 +4,7 @@ import MuteIcon from "./Icons/MuteIcon";
 import { cn } from "@/lib/cn";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import { useAudio } from "@/contexts/AudioContext";
-import Link from "next/link";
 import TransitionLink from "./Transition/TransitionLink";
-import gsap from "gsap";
 
 const Navbar = () => {
   const { play } = useHoverSound();
