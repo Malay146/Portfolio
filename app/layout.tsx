@@ -52,8 +52,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://malaypatel.com"), // ← Change here if using a different domain
 
   title: {
-    default:
-      "Malay Patel — Fullstack Developer & UI Engineer",
+    default: "Malay Patel — Fullstack Developer & UI Engineer",
     template: "%s | Malay Patel",
   },
 
@@ -136,6 +135,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          defer
+          data-website-id="dfid_XxH6VqIRydYTlcwFUXsnK"
+          data-domain="malaypatel.com"
+          data-allow-localhost="true"
+          src="https://datafa.st/js/script.js"
+        ></script>
+      </head>
       <body
         className={`${inter.variable} ${pixelifySans.variable} ${robotoMono.variable} ${robotoCondensed.variable} ${dotoFont.variable} 
         antialiased selection:bg-purple-700 selection:text-purple-100 bg-black selection:font-pixelify`}
