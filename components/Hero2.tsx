@@ -45,9 +45,9 @@ const Hero2 = () => {
         <div className="w-full border-y border-dashed border-white/50 flex">
           <div className="text-sm flex-1 md:flex flex-col justify-center p-2 leading-none gap-1 relative hover:bg-white/20 transition-all duration-100 cursor-default border-r border-dashed border-white/50">
             <span className="inline-block text-[16px] md:text-[24px] font-thin">
-              Fullstack
+              Frontend
             </span>
-            <h1 className="text-[21px] md:text-[30px] font-bold">Developer</h1>
+            <h1 className="text-[21px] md:text-[30px] font-bold">Engineer</h1>
             <TopRight />
             <BottomRight />
           </div>
