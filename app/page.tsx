@@ -12,8 +12,34 @@ import TechnologyStack from "@/components/TechnologyStack";
 import Crafts from "@/components/crafts";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Malay Patel",
+    url: "https://malaypatel.com",
+    jobTitle: "Fullstack Developer & UI Engineer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Freelance",
+    },
+    sameAs: ["https://github.com/Malay146"],
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "GSAP",
+      "Frontend Development",
+      "UI Engineering",
+    ],
+  };
+
   return (
     <div className="w-full border-x border-white flex flex-col lg:border-x-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero1 />
       <Hero2 />
       <StripGridHorizontal className="h-10 md:h-12" />

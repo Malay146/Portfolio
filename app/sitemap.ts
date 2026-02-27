@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/crafts`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.75,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/blogs`,
@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blogs/nextjs-page-transition-gsap`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/blogs/my-portfolio-case-study`,

@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     "GSAP animations",
     "interactive UI design",
   ],
+  alternates: {
+    canonical: "https://malaypatel.com/crafts",
+  },
 
   openGraph: {
     title: "Crafts — Next.js & GSAP UI Experiments",
@@ -164,8 +167,30 @@ const crafts = [
 ];
 
 const page = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Crafts — Interactive UI Experiments",
+    description:
+      "A collection of interactive UI experiments and crafts built with Next.js and GSAP by Malay Patel.",
+    url: "https://malaypatel.com/crafts",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: crafts.map((craft, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: craft.title,
+        url: `https://malaypatel.com/crafts#${craft.id}`,
+      })),
+    },
+  };
+
   return (
     <div className="w-full border-x border-white flex flex-col lg:border-x-0 relative overflow-y-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
         <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
           <h2 className="font-roboto-mono font-bold tracking-tighter text-[18px] md:text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">

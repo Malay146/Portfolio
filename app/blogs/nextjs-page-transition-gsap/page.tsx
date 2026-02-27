@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "entry exit animation Next.js",
     "Next.js App Router animation",
   ],
+  alternates: {
+    canonical: "https://malaypatel.com/blogs/nextjs-page-transition-gsap",
+  },
 
   openGraph: {
     title: "Next.js Page Transitions with GSAP",
@@ -39,5 +42,40 @@ export const metadata: Metadata = {
   },
 };
 export default function Page() {
-  return <BlogClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "Next.js Page Transitions with GSAP (Entry & Exit Animations)",
+    description:
+      "Learn how to build smooth page transitions in Next.js using GSAP with entry and exit animations, clean architecture, and performance-friendly routing.",
+    author: {
+      "@type": "Person",
+      name: "Malay Patel",
+      url: "https://malaypatel.com",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Malay Patel",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://malaypatel.com/favicon.ico",
+      },
+    },
+    datePublished: "2024-02-27T00:00:00Z",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://malaypatel.com/blogs/nextjs-page-transition-gsap",
+    },
+    image: "https://malaypatel.com/og/nextjs-gsap-transition.png",
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogClient />
+    </>
+  );
 }

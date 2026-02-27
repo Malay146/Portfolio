@@ -75,6 +75,14 @@ export const metadata: Metadata = {
 
   authors: [{ name: "Malay Patel", url: "https://malaypatel.com" }],
   creator: "Malay Patel",
+  publisher: "Malay Patel",
+  applicationName: "Malay Patel Portfolio",
+  generator: "Next.js",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 
   openGraph: {
     type: "website",
@@ -112,6 +120,15 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://malaypatel.com",
+    languages: {
+      "en-US": "https://malaypatel.com",
+    },
+  },
+
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Malay Patel | Portfolio",
   },
 
   robots: {

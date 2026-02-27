@@ -7,11 +7,42 @@ import { MacCodeBlock } from "@/components/MacCodeBlock";
 import VideoOverlay from "@/components/VideoOverlay";
 
 const page = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "Next.js Page Transitions with GSAP (Entry & Exit Animations)",
+    description:
+      "Learn how to build smooth page transitions in Next.js using GSAP with entry and exit animations.",
+    author: {
+      "@type": "Person",
+      name: "Malay Patel",
+      url: "https://malaypatel.com",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Malay Patel",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://malaypatel.com/favicon.ico",
+      },
+    },
+    datePublished: "2024-02-27T00:00:00Z",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://malaypatel.com/blogs",
+    },
+    image: "https://malaypatel.com/og/nextjs-gsap-transition.png",
+  };
+
   return (
     <div className="w-full border-x border-white flex flex-col lg:border-x-0">
-       <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
         {/* Blog Title */}
-       
+
         <StripGridHorizontal className="h-10 md:h-12" />
 
         {/* Blog Entry 1 */}
@@ -27,7 +58,7 @@ const page = () => {
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1",
           )}
         >
           <p className="font-medium text-white/80 hover:bg-white/10 transition-all duration-100">
@@ -56,7 +87,7 @@ const page = () => {
           <div
             className={cn(
               "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
+              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2",
             )}
           >
             <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
@@ -75,7 +106,7 @@ const page = () => {
           <div
             className={cn(
               "text-white flex flex-col justify-between px-4 md:px-16 border-b border-dashed border-white/30",
-              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
+              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2",
             )}
           >
             <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
@@ -92,7 +123,7 @@ const page = () => {
           <div
             className={cn(
               "text-white flex flex-col justify-between px-4 md:px-16 border-b border-dashed border-white/30",
-              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
+              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2",
             )}
           >
             <p className="hover:bg-white/10 transition-all duration-100 text-white font-bold">
@@ -106,7 +137,7 @@ const page = () => {
           <div
             className={cn(
               "text-white flex flex-col justify-between px-4 md:px-16 border-b border-dashed border-white/30",
-              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+              "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1",
             )}
           >
             <p className="text-white font-medium font-roboto-mono">
@@ -127,7 +158,7 @@ const page = () => {
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2",
           )}
         >
           <p className="text-md hover:bg-white/10 transition-all duration-100 text-white font-bold">
@@ -144,7 +175,7 @@ const page = () => {
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1",
           )}
         >
           <p className="text-white font-medium font-roboto-mono">
@@ -252,7 +283,7 @@ export default TransitionProvider;
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2",
           )}
         >
           <p className="text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
@@ -264,7 +295,7 @@ export default TransitionProvider;
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1",
           )}
         >
           <p className="text-white font-medium font-roboto-mono">
@@ -305,7 +336,7 @@ export default TransitionLink;
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2",
           )}
         >
           <p className="text-white/80 font-medium text-md hover:bg-white/10 transition-all duration-100">
@@ -317,7 +348,7 @@ export default TransitionLink;
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1",
           )}
         >
           <p className="text-white font-medium font-roboto-mono">layout.tsx:</p>
@@ -352,7 +383,7 @@ export default function RootLayout({ children }) {
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light py-1",
           )}
         >
           <p className="text-white font-medium font-roboto-mono">page.tsx:</p>
@@ -385,7 +416,7 @@ export default function Home() {
         <div
           className={cn(
             "text-white grid grid-cols-1 md:grid-cols-2 pl-4 md:pl-16 border-y border-dashed border-white/30",
-            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light"
+            "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light",
           )}
         >
           <div className="flex flex-col w-full h-full md:border-r md:border-dashed border-white/30 px-2 py-2 ">
@@ -418,10 +449,10 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
 
 export const spanTag = ({
   className,

@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "GSAP portfolio animation",
     "frontend portfolio architecture",
   ],
+  alternates: {
+    canonical: "https://malaypatel.com/blogs/my-portfolio-case-study",
+  },
 
   openGraph: {
     title: "Portfolio Case Study — Next.js, GSAP & Motion",
@@ -40,5 +43,40 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <BlogClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "Portfolio Case Study — Building an Animated Site with Next.js",
+    description:
+      "A detailed case study on building my personal portfolio using Next.js, GSAP, Motion, Tailwind CSS, and Vercel.",
+    author: {
+      "@type": "Person",
+      name: "Malay Patel",
+      url: "https://malaypatel.com",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Malay Patel",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://malaypatel.com/favicon.ico",
+      },
+    },
+    datePublished: "2024-02-27T00:00:00Z",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://malaypatel.com/blogs/my-portfolio-case-study",
+    },
+    image: "https://malaypatel.com/og/portfolio-case-study.png",
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogClient />
+    </>
+  );
 }
