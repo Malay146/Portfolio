@@ -20,6 +20,7 @@ import VercelFilter from "@/components/crafts/vercel-filter";
 import dynamic from "next/dynamic";
 import LazyCraft from "@/components/LazyCraft";
 import AppleClock from "@/components/crafts/apple-clock";
+import ExpandShare from "@/components/crafts/expand-share";
 
 const DottedBackground = dynamic(
   () => import("@/components/crafts/dotted-background"),
@@ -73,6 +74,12 @@ export const metadata: Metadata = {
 
 // Define crafts configuration
 const crafts = [
+  {
+    id: "expand-share",
+    title: "Expand Share",
+    component: <ExpandShare />,
+    date: "20.3.2026",
+  },
   {
     id: "apple-clock",
     title: "Apple Style Clock",
