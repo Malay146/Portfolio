@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 const expandShare = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <div className="w-full flex items-center justify-center min-h-50 p-6 font-inter">
