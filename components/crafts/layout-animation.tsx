@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence, Transition } from "motion/react";
 import { useState, useEffect } from "react";
-import SpringArrow from "../ui_components/SpringArrow";
+import SpringArrow from "@/components/ui/SpringArrow";
 
 interface ContentItem {
   id: number;

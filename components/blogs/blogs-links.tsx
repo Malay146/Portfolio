@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import TopLeft from "../Lcorner/TopLeft";
-import BottomRight from "../Lcorner/BottomRight";
+import { DashedHeader, DashedLineContainer } from "@/components/ui/dashed-containers";
 import Link from "next/link";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import { usePathname } from "next/navigation";
@@ -31,13 +30,9 @@ const BlogsLinks = () => {
   return (
     <div className=" pt-3 md:pt-6 flex flex-col gap-3 md:gap-4">
       {/* Blog Title */}
-      <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-        <h2 className="font-roboto-mono font-bold tracking-tighter text-[18px] md:text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-          Blogs
-          <TopLeft />
-          <BottomRight />
-        </h2>
-      </div>
+      <DashedLineContainer>
+        <DashedHeader>Blogs</DashedHeader>
+      </DashedLineContainer>
       {/* Blog options */}
       <div className="text-white/70 flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30 p-1">
         {links.map((link, index) => {

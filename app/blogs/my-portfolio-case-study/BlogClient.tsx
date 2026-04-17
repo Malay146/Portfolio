@@ -1,31 +1,14 @@
 "use client";
-import FramerMotionIcon from "@/components/Icons/FramerMotionIcon";
-import GithubTechIcon from "@/components/Icons/GithubTechIcon";
-import GSAPIcon from "@/components/Icons/GSAPIcon";
-import NextJSIcon from "@/components/Icons/NextJSIcon";
-import ReactIcon from "@/components/Icons/ReactIcon";
-import TailwindIcon from "@/components/Icons/TailwindIcon";
-import TypescriptIcon from "@/components/Icons/TypescriptIcon";
-import VercelIcon from "@/components/Icons/VercelIcon";
-import BottomRight from "@/components/Lcorner/BottomRight";
-import TopLeft from "@/components/Lcorner/TopLeft";
-import StripGridHorizontal from "@/components/StripGridHorizontal";
-import ToolTip from "@/components/ToolTip";
+import { TechStackDisplay } from "@/components/ui/tech-stack";
+import { DashedHeader, DashedLineContainer } from "@/components/ui/dashed-containers";
+import StripGridHorizontal from "@/components/ui/StripGridHorizontal";
+import ToolTip from "@/components/ui/ToolTip";
 import { cn } from "@/lib/cn";
 import React from "react";
 import type { Metadata } from "next";
 
 const page = () => {
-  const stacks = [
-    { name: "ReactJS", icon: <ReactIcon /> },
-    { name: "NextJS", icon: <NextJSIcon /> },
-    { name: "Typescript", icon: <TypescriptIcon /> },
-    { name: "Vercel", icon: <VercelIcon /> },
-    { name: "TailwindCSS", icon: <TailwindIcon /> },
-    { name: "GSAP", icon: <GSAPIcon /> },
-    { name: "Framer Motion", icon: <FramerMotionIcon /> },
-    { name: "GitHub", icon: <GithubTechIcon /> },
-  ];
+
 
   return (
     <div className="w-full border-x border-white flex flex-col lg:border-x-0">
@@ -33,13 +16,11 @@ const page = () => {
         <StripGridHorizontal className="h-10 md:h-12" />
 
         {/* Blog Entry 1 */}
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             Building My Portfolio with Next.js, GSAP & Motion
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
 
         {/* Blog Content 1 */}
         <div
@@ -58,13 +39,11 @@ const page = () => {
 
         <StripGridHorizontal className="h-4 md:h-6" />
         {/* Blog Entry 2 */}
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             1. Why I Needed a Custom Portfolio
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
@@ -81,39 +60,27 @@ const page = () => {
 
         <StripGridHorizontal className="h-4 md:h-6" />
         {/* Blog Entry 3 */}
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             2. Key Technologies Used
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
         <div
           className={cn(
             "text-white flex justify-between px-4 md:px-16 border-y border-dashed border-white/30",
             "font-roboto-mono tracking-tighter text-[8px] md:text-[14px] font-light md:py-2",
           )}
         >
-          {stacks.map((stack) => (
-            <ToolTip key={stack.name} infoText={stack.name}>
-              <div className="size-5 md:size-10 flex justify-center items-center hover:scale-105 transition-transform">
-                {React.cloneElement(stack.icon, {
-                  className: "size-4 md:size-8",
-                })}
-              </div>
-            </ToolTip>
-          ))}
+          <TechStackDisplay techNames={["ReactJS", "NextJS", "Typescript", "Vercel", "TailwindCSS", "GSAP", "Framer Motion", "GitHub"]} containerClassName="px-0 w-full" />
         </div>
 
         <StripGridHorizontal className="h-4 md:h-6" />
         {/* Blog Entry 4 */}
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             3. Architecture Decisions
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",
@@ -130,13 +97,11 @@ const page = () => {
 
         <StripGridHorizontal className="h-4 md:h-6" />
         {/* Blog Entry 5 */}
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
              4. Motion Philosophy
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
         <div
           className={cn(
             "text-white flex flex-col justify-between px-4 md:px-16 border-y border-dashed border-white/30",

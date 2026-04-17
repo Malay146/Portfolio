@@ -1,10 +1,9 @@
 "use client";
-import BottomRight from "@/components/Lcorner/BottomRight";
-import TopLeft from "@/components/Lcorner/TopLeft";
-import StripGridHorizontal from "@/components/StripGridHorizontal";
+import { DashedLineContainer, DashedHeader } from "@/components/ui/dashed-containers";
+import StripGridHorizontal from "@/components/ui/StripGridHorizontal";
 import { cn } from "@/lib/cn";
-import { MacCodeBlock } from "@/components/MacCodeBlock";
-import VideoOverlay from "@/components/VideoOverlay";
+import { MacCodeBlock } from "@/components/ui/MacCodeBlock";
+import VideoOverlay from "@/components/ui/VideoOverlay";
 
 const page = () => {
   return (
@@ -14,13 +13,11 @@ const page = () => {
         <StripGridHorizontal className="h-10 md:h-12" />
 
         {/* Blog Entry 1 */}
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             Next.js page transition with entry and exit animations using GSAP
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
 
         {/* Blog Content 1 */}
         <div
@@ -44,13 +41,11 @@ const page = () => {
         <StripGridHorizontal className="h-4 md:h-6" />
 
         {/* Blog Entry 2 */}
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             1.How it Works
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
         <div className="flex flex-col">
           <div
             className={cn(
@@ -115,13 +110,11 @@ const page = () => {
         </div>
         <StripGridHorizontal className="h-4 md:h-6" />
 
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             2.The Transition Provider (Core Logic)
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
 
         <div
           className={cn(
@@ -240,13 +233,11 @@ export default TransitionProvider;
 
         <StripGridHorizontal className="h-4 md:h-6" />
 
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             3.Transition Link Component
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
 
         <div
           className={cn(
@@ -293,13 +284,11 @@ export default TransitionLink;
 
         <StripGridHorizontal className="h-4 md:h-6" />
 
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             4.Wrap Your App with the Provider
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
 
         <div
           className={cn(
@@ -340,13 +329,11 @@ export default function RootLayout({ children }) {
 
         <StripGridHorizontal className="h-4 md:h-6" />
 
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             5.Example Usage on a Page
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
 
         <div
           className={cn(
@@ -373,13 +360,11 @@ export default function Home() {
 
         <StripGridHorizontal className="h-4 md:h-6" />
 
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[16px] md:text-[22px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+        <DashedLineContainer>
+          <DashedHeader className="text-[16px] md:text-[22px]">
             Final Result
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          </DashedHeader>
+        </DashedLineContainer>
 
         <div
           className={cn(

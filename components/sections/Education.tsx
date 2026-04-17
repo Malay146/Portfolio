@@ -1,19 +1,14 @@
 import React from "react";
-import TopLeft from "./Lcorner/TopLeft";
-import BottomRight from "./Lcorner/BottomRight";
-import Button from "./ui_components/Button";
-import FileIcon from "./Icons/FileIcon";
+import { DashedLineContainer, DashedHeader } from "@/components/ui/dashed-containers";
+import Button from "@/components/ui/Button";
+import FileIcon from "@/components/Icons/FileIcon";
 
 const Education = () => {
   return (
     <div className="py-3 md:py-6 flex flex-col gap-3 md:gap-4">
-      <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-        <h2 className="font-roboto-mono font-bold tracking-tighter text-[18px] md:text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-          Education
-          <TopLeft />
-          <BottomRight />
-        </h2>
-      </div>
+      <DashedLineContainer>
+        <DashedHeader>Education</DashedHeader>
+      </DashedLineContainer>
       <Information />
     </div>
   );
@@ -57,7 +52,7 @@ export const Information = () => {
   ];
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-4">
       {educationData.map((item, index) => (
         <div
           key={index}

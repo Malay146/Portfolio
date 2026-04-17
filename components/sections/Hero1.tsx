@@ -1,5 +1,5 @@
 import React from 'react'
-import Dither from './Dither'
+import Dither from '@/components/ui/Dither'
 
 const Hero1 = () => {
   return (

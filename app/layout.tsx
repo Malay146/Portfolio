@@ -11,10 +11,10 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { AudioProvider } from "@/contexts/AudioContext";
 import TransitionProvider from "@/components/Transition/TransitionProvider";
-import StripGridVertical from "@/components/StripGridVertical";
-import Widgets from "@/components/Widgets";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import StripGridVertical from "@/components/ui/StripGridVertical";
+import Widgets from "@/components/sections/Widgets";
+import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/sections/Navbar";
 
 // ----------------- Fonts -----------------
 const dotoFont = doto({

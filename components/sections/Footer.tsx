@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/cn";
 import React from "react";
-import StripGridHorizontal from "./StripGridHorizontal";
+import StripGridHorizontal from "@/components/ui/StripGridHorizontal";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 

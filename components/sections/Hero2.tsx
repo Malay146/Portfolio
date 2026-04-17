@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import LocationIcon from "./Icons/LocationIcon";
-import MailIcon from "./Icons/MailIcon";
-import GetintouchIcon from "./Icons/GetintouchIcon";
-import TopLeft from "./Lcorner/TopLeft";
-import BottomLeft from "./Lcorner/BottomLeft";
-import BottomRight from "./Lcorner/BottomRight";
-import TopRight from "./Lcorner/TopRight";
+import LocationIcon from "@/components/Icons/LocationIcon";
+import MailIcon from "@/components/Icons/MailIcon";
+import GetintouchIcon from "@/components/Icons/GetintouchIcon";
+import TopLeft from "@/components/ui/corners/TopLeft";
+import BottomLeft from "@/components/ui/corners/BottomLeft";
+import BottomRight from "@/components/ui/corners/BottomRight";
+import TopRight from "@/components/ui/corners/TopRight";
 import Link from "next/link";
 import { useHoverSound } from "@/hooks/useHoverSound";
 
@@ -45,7 +45,7 @@ const Hero2 = () => {
         <div className="w-full border-y border-dashed border-white/50 flex">
           <div className="text-sm flex-1 md:flex flex-col justify-center p-2 leading-none gap-1 relative hover:bg-white/20 transition-all duration-100 cursor-default border-r border-dashed border-white/50">
             <span className="inline-block text-[16px] md:text-[24px] font-thin">
-              Frontend
+              Design
             </span>
             <h1 className="text-[21px] md:text-[30px] font-bold">Engineer</h1>
             <TopRight />

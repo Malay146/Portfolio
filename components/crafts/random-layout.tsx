@@ -12,8 +12,8 @@ import {
   SunIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import MoonIcon from "../Icons/MoonIcon";
-import SpringArrow from "../ui_components/SpringArrow";
+import MoonIcon from "@/components/Icons/MoonIcon";
+import SpringArrow from "@/components/ui/SpringArrow";
 
 const LayoutGrid = () => {
   const [isHovered, setIsHovered] = React.useState(false);
