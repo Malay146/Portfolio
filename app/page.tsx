@@ -17,7 +17,7 @@ export default function Home() {
     "@type": "Person",
     name: "Malay Patel",
     url: "https://malaypatel.com",
-    jobTitle: "Fullstack Developer & UI Engineer",
+    jobTitle: "Frontend Developer & UI Engineer",
     worksFor: {
       "@type": "Organization",
       name: "Freelance",

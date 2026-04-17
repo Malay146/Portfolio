@@ -52,12 +52,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://malaypatel.com"), // ← Change here if using a different domain
 
   title: {
-    default: "Malay Patel — Fullstack Developer & UI Engineer",
+    default: "Malay Patel — Frontend Developer & UI Engineer",
     template: "%s | Malay Patel",
   },
 
   description:
-    "Portfolio of Malay Patel, a fullstack developer specializing in React, Next.js, Tailwind CSS, animations, and modern UI engineering.",
+    "Portfolio of Malay Patel, a Frontend developer specializing in React, Next.js, Tailwind CSS, animations, and modern UI engineering.",
 
   keywords: [
     "Malay Patel",
