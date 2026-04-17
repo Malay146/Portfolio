@@ -1,15 +1,15 @@
 "use client";
 import React, { JSX, useEffect, useState } from "react";
-import Button from "./ui_components/Button";
-import LinkedInIcons from "./Icons/LinkedInIcon";
-import TwitterIcon from "./Icons/TwitterIcon";
-import GithubIcon from "./Icons/GithubIcon";
-import MoonIcon from "./Icons/MoonIcon";
-import SunIcon from "./Icons/SunIcon";
-import CloudIcon from "./Icons/CloudIcon";
-import RainIcon from "./Icons/RainIcon";
-import YoutubeMusicIcon from "./Icons/YoutubeMusicIcon";
-import PlayIcon from "./Icons/PlayIcon";
+import Button from "@/components/ui/Button";
+import LinkedInIcons from "@/components/Icons/LinkedInIcon";
+import TwitterIcon from "@/components/Icons/TwitterIcon";
+import GithubIcon from "@/components/Icons/GithubIcon";
+import MoonIcon from "@/components/Icons/MoonIcon";
+import SunIcon from "@/components/Icons/SunIcon";
+import CloudIcon from "@/components/Icons/CloudIcon";
+import RainIcon from "@/components/Icons/RainIcon";
+import YoutubeMusicIcon from "@/components/Icons/YoutubeMusicIcon";
+import PlayIcon from "@/components/Icons/PlayIcon";
 import { usePathname } from "next/navigation";
 
 const Widgets = () => {

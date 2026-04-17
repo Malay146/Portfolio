@@ -1,6 +1,5 @@
-import BottomRight from "@/components/Lcorner/BottomRight";
-import TopLeft from "@/components/Lcorner/TopLeft";
-import StripGridHorizontal from "@/components/StripGridHorizontal";
+import { DashedHeader, DashedLineContainer } from "@/components/ui/dashed-containers";
+import StripGridHorizontal from "@/components/ui/StripGridHorizontal";
 import React from "react";
 import LayoutAnimation from "@/components/crafts/layout-animation";
 import ProgressiveBlur from "@/components/crafts/progessive-blur";
@@ -18,7 +17,7 @@ import CardMenu from "@/components/crafts/card-menu";
 import VercelFilter from "@/components/crafts/vercel-filter";
 // import MeteorCard from "@/components/crafts/comet-meteor";
 import dynamic from "next/dynamic";
-import LazyCraft from "@/components/LazyCraft";
+import LazyCraft from "@/components/crafts/LazyCraft";
 import AppleClock from "@/components/crafts/apple-clock";
 import ExpandShare from "@/components/crafts/expand-share";
 
@@ -199,32 +198,19 @@ const page = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[18px] md:text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-            Crafts
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+          <DashedLineContainer>
+            <DashedHeader>Crafts</DashedHeader>
+          </DashedLineContainer>
 
         <StripGridHorizontal className="h-10 md:h-12" />
 
         {/* Render crafts dynamically */}
         {crafts.map((craft, index) => (
           <React.Fragment key={craft.title}>
-            <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-              <h2 className="font-roboto-mono font-bold tracking-tighter text-[14px] md:text-[20px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-                {craft.title}
-                <TopLeft />
-                <BottomRight />
-              </h2>
-
-              <h2 className="font-roboto-mono tracking-tighter text-[14px] md:text-[20px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-                {index + 1}
-                <TopLeft />
-                <BottomRight />
-              </h2>
-            </div>
+            <DashedLineContainer>
+              <DashedHeader className="text-[14px] md:text-[20px]">{craft.title}</DashedHeader>
+              <DashedHeader className="font-normal text-[14px] md:text-[20px]">{index + 1}</DashedHeader>
+            </DashedLineContainer>
 
             <div className="text-white flex flex-col justify-center items-center px-4 md:px-16 border-y border-dashed border-white/30">
               <div className="w-full">

@@ -1,7 +1,6 @@
 "use client";
-import BottomRight from "@/components/Lcorner/BottomRight";
-import TopLeft from "@/components/Lcorner/TopLeft";
-import StripGridHorizontal from "@/components/StripGridHorizontal";
+import { DashedHeader, DashedLineContainer } from "@/components/ui/dashed-containers";
+import StripGridHorizontal from "@/components/ui/StripGridHorizontal";
 import React, { ButtonHTMLAttributes, use } from "react";
 import LayoutAnimation from "@/components/crafts/layout-animation";
 import ProgressiveBlur from "@/components/crafts/progessive-blur";
@@ -16,11 +15,11 @@ import PurchaseButton from "@/components/crafts/purchase-sequence";
 import type { Metadata } from "next";
 import { cn } from "@/lib/cn";
 import { useState } from "react";
-import TransitionLink from "./Transition/TransitionLink";
+import TransitionLink from "@/components/Transition/TransitionLink";
 import { useHoverSound } from "@/hooks/useHoverSound";
-import CardMenu from "./crafts/card-menu";
-import MeteorCard from "./crafts/comet-meteor";
-import LazyCraft from "./LazyCraft";
+import CardMenu from "@/components/crafts/card-menu";
+import MeteorCard from "@/components/crafts/comet-meteor";
+import LazyCraft from "@/components/crafts/LazyCraft";
 
 export const metadata: Metadata = {
   title: "Crafts — Interactive UI Experiments with Next.js & GSAP",
@@ -112,13 +111,9 @@ const Crafts = () => {
       </TransitionLink>
 
       <div className=" py-3 md:py-6 flex flex-col gap-3 md:gap-4">
-        <div className="text-white flex justify-between items-center px-4 md:px-16 border-y border-dashed border-white/30">
-          <h2 className="font-roboto-mono font-bold tracking-tighter text-[18px] md:text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-            Crafts
-            <TopLeft />
-            <BottomRight />
-          </h2>
-        </div>
+        <DashedLineContainer>
+          <DashedHeader>Crafts</DashedHeader>
+        </DashedLineContainer>
 
         {/* <StripGridHorizontal className="h-0" /> */}
         <div className="flex flex-col gap-4 md:gap-10">
@@ -127,17 +122,13 @@ const Crafts = () => {
             <React.Fragment key={index}>
               <div>
                 <div className="text-white flex justify-between items-center px-4 md:px-16 border-t border-dashed border-white/30">
-                  <h2 className="font-roboto-mono font-bold text-zinc-400 tracking-tighter text-[14px] md:text-[18px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+                  <DashedHeader className="text-zinc-400 text-[14px] md:text-[18px]">
                     {craft.title}
-                    <TopLeft />
-                    <BottomRight />
-                  </h2>
+                  </DashedHeader>
 
-                  <h2 className="font-roboto-mono tracking-tighter text-[14px] md:text-[18px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
+                  <DashedHeader className="font-normal text-[14px] md:text-[18px]">
                     {index + 1}
-                    <TopLeft />
-                    <BottomRight />
-                  </h2>
+                  </DashedHeader>
                 </div>
 
                 <div className="text-white flex flex-col justify-center items-center px-4 md:px-16 border-y border-dashed border-white/30">

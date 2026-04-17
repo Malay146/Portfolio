@@ -1,15 +1,15 @@
-import AboutMe from "@/components/AboutMe";
-import Education from "@/components/Education";
-import Experience from "@/components/Experience";
-import Footer from "@/components/Footer";
-import Hero1 from "@/components/Hero1";
-import Hero2 from "@/components/Hero2";
-import Widgets from "@/components/Widgets";
-import Projects from "@/components/Projects";
-import StripGridHorizontal from "@/components/StripGridHorizontal";
-import StripGridVertical from "@/components/StripGridVertical";
-import TechnologyStack from "@/components/TechnologyStack";
-import Crafts from "@/components/crafts";
+import AboutMe from "@/components/sections/AboutMe";
+import Education from "@/components/sections/Education";
+import Experience from "@/components/sections/Experience";
+import Footer from "@/components/sections/Footer";
+import Hero1 from "@/components/sections/Hero1";
+import Hero2 from "@/components/sections/Hero2";
+import Widgets from "@/components/sections/Widgets";
+import Projects from "@/components/sections/Projects";
+import StripGridHorizontal from "@/components/ui/StripGridHorizontal";
+import StripGridVertical from "@/components/ui/StripGridVertical";
+import TechnologyStack from "@/components/sections/TechnologyStack";
+import Crafts from "@/components/sections/crafts";
 
 export default function Home() {
   const jsonLd = {

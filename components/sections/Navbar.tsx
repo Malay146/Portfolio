@@ -1,10 +1,10 @@
 "use client";
-import VolumeIcon from "./Icons/VolumeIcon";
-import MuteIcon from "./Icons/MuteIcon";
+import VolumeIcon from "@/components/Icons/VolumeIcon";
+import MuteIcon from "@/components/Icons/MuteIcon";
 import { cn } from "@/lib/cn";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import { useAudio } from "@/contexts/AudioContext";
-import TransitionLink from "./Transition/TransitionLink";
+import TransitionLink from "@/components/Transition/TransitionLink";
 
 const Navbar = () => {
   const { play } = useHoverSound();

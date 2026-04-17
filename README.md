@@ -15,7 +15,7 @@ Designed with clean UI, smooth user experience, and fast performance in mind.
 - **Next.js** — App Router, optimized routing, SEO-friendly
 - **React.js** — Component-driven UI
 - **Tailwind CSS** — Utility-first styling for a clean and responsive layout
-- **TypeScript (optional if used)** — Type safety and better DX
+- **TypeScript** — Type safety and better DX
 
 ---
 

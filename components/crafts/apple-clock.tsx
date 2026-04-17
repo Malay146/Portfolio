@@ -166,7 +166,7 @@ export default function AppleClock() {
                 from-black
                 via-zinc-900
                 to-zinc-800
-                z-99
+                z-50
                 overflow-hidden
              "
       >

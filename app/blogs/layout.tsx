@@ -1,6 +1,6 @@
 import BlogsLinks from "@/components/blogs/blogs-links";
-import BottomRight from "@/components/Lcorner/BottomRight";
-import TopLeft from "@/components/Lcorner/TopLeft";
+import BottomRight from "@/components/ui/corners/BottomRight";
+import TopLeft from "@/components/ui/corners/TopLeft";
 import Link from "next/link";
 
 import type { Metadata } from "next";

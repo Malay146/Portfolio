@@ -1,77 +1,36 @@
 "use client";
 import React, { JSX } from "react";
-import TopLeft from "./Lcorner/TopLeft";
-import BottomRight from "./Lcorner/BottomRight";
+import { DashedHeader, DashedLineContainer } from "@/components/ui/dashed-containers";
 import Image from "next/image";
-import Button from "./ui_components/Button";
-import GlobeIcon from "./Icons/GlobeIcon";
-import GithubIcon from "./Icons/GithubIcon";
-import CrossArrow from "./Icons/CrossArrow";
+import Button from "@/components/ui/Button";
+import GlobeIcon from "@/components/Icons/GlobeIcon";
+import GithubIcon from "@/components/Icons/GithubIcon";
+import CrossArrow from "@/components/Icons/CrossArrow";
 import Link from "next/link";
-import ToolTip from "./ToolTip";
-import ReactIcon from "./Icons/ReactIcon";
-import NextJSIcon from "./Icons/NextJSIcon";
-import TypescriptIcon from "./Icons/TypescriptIcon";
-import VercelIcon from "./Icons/VercelIcon";
-import TailwindIcon from "./Icons/TailwindIcon";
-import GSAPIcon from "./Icons/GSAPIcon";
-import GithubTechIcon from "./Icons/GithubTechIcon";
+import ToolTip from "@/components/ui/ToolTip";
+import { TechStackDisplay } from "@/components/ui/tech-stack";
 import { projects } from "@/data/projects";
 import { useHoverSound } from "@/hooks/useHoverSound";
-import FirebaseIcon from "./Icons/FirebaseIcon";
-import ExpressjsIcon from "./Icons/ExpressjsIcon";
-import NodejsIcon from "./Icons/NodejsIcon";
-import MongodbIcon from "./Icons/MongodbIcon";
-import ThreejsIcon from "./Icons/ThreejsIcon";
-import FigmaIcon from "./Icons/FigmaIcon";
-import FramerMotionIcon from "./Icons/FramerMotionIcon";
+import FirebaseIcon from "@/components/Icons/FirebaseIcon";
+import ExpressjsIcon from "@/components/Icons/ExpressjsIcon";
+import NodejsIcon from "@/components/Icons/NodejsIcon";
+import MongodbIcon from "@/components/Icons/MongodbIcon";
+import ThreejsIcon from "@/components/Icons/ThreejsIcon";
+import FigmaIcon from "@/components/Icons/FigmaIcon";
+import FramerMotionIcon from "@/components/Icons/FramerMotionIcon";
 
-export const techIcons: Record<string, JSX.Element> = {
-  ReactJS: <ReactIcon />,
-  NextJS: <NextJSIcon />,
-  Typescript: <TypescriptIcon />,
-  TailwindCSS: <TailwindIcon />,
-  Vercel: <VercelIcon />,
-  GSAP: <GSAPIcon />,
-  GitHub: <GithubTechIcon />,
-  MongoDB: <MongodbIcon />,
-  "Node.js": <NodejsIcon />,
-  "Express.js": <ExpressjsIcon />,
-  Firebase: <FirebaseIcon />,
-  "Three.js": <ThreejsIcon />,
-  Figma: <FigmaIcon />,
-  "Framer Motion": <FramerMotionIcon />,
-};
+
 
 const Projects = () => {
-  const stacks = [
-    { name: "ReactJS", icon: <ReactIcon /> },
-    { name: "NextJS", icon: <NextJSIcon /> },
-    { name: "Typescript", icon: <TypescriptIcon /> },
-    { name: "Vercel", icon: <VercelIcon /> },
-    { name: "TailwindCSS", icon: <TailwindIcon /> },
-    { name: "GSAP", icon: <GSAPIcon /> },
-    { name: "Framer Motion", icon: <FramerMotionIcon /> },
-    { name: "Figma", icon: <FigmaIcon />},
-    { name: "Three.js", icon: <ThreejsIcon /> },
-    { name: "GitHub", icon: <GithubTechIcon /> },
-    { name: "MongoDB", icon: <MongodbIcon /> },
-    { name: "Node.js", icon: <NodejsIcon /> },
-    { name: "Express.js", icon: <ExpressjsIcon /> },
-    { name: "Firebase", icon: <FirebaseIcon /> },
-  ];
+
 
   const { play } = useHoverSound();
 
   return (
     <div className="py-3 md:py-6 flex flex-col gap-3 md:gap-4">
-      <div className="text-white flex justify-between items-center px-6 md:px-16 border-y border-dashed border-white/30">
-        <h2 className="font-roboto-mono font-bold tracking-tighter text-[18px] md:text-[24px] px-2 border-x border-dashed border-white/30 relative hover:bg-white/10 transition-all duration-100 cursor-default">
-          Projects
-          <TopLeft />
-          <BottomRight />
-        </h2>
-      </div>
+      <DashedLineContainer className="px-6 md:px-16">
+        <DashedHeader>Projects</DashedHeader>
+      </DashedLineContainer>
 
       {projects.map((project) => (
         <div
@@ -123,17 +82,7 @@ const Projects = () => {
               {project.description}
             </p>
 
-            <div className="flex items-center">
-              {project.techstack.map((tech) => (
-                <ToolTip key={tech} infoText={tech}>
-                  <div className="size-6 md:size-10 flex justify-center items-center">
-                    {React.cloneElement(techIcons[tech], {
-                      className: "size-4 md:size-6",
-                    })}
-                  </div>
-                </ToolTip>
-              ))}
-            </div>
+            <TechStackDisplay techNames={project.techstack} containerClassName="justify-start gap-1" wrapperClassName="size-6 md:size-10" iconSizeClassName="size-4 md:size-6" />
           </div>
         </div>
       ))}

@@ -1,5 +1,5 @@
 "use client";
-import SpringArrow from "../ui_components/SpringArrow";
+import SpringArrow from "@/components/ui/SpringArrow";
 
 const dummyContent = [
   { id: 1, text: "Welcome to the Progressive Blur demonstration" },
